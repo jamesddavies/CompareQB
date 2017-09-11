@@ -1,0 +1,119 @@
+<div class="select-container">
+<div ng-repeat="player in players" class="player-select" style="background: linear-gradient(60deg, {{player.info.colors.colorSecondary}}, {{player.info.colors.colorMain}});">
+	<span ng-if="!player.stats">
+		<input class="search-input" type="text" placeholder="QB Name" ng-model="player.name">
+		<ul class="suggestions"></ul>
+		<button class="search-btn" ng-click="reqPlayer($index + 1)" ng-class="(player.name == '') ? 'inactive' : 'active'">Search</button>
+		<p>{{player.stats}}</p>
+	</span>
+	<span ng-if="player.stats">
+		<div class="erase" ng-click="erasePlayer($index + 1)" style="color: {{player.info.colors.textColor}};">x</div>
+		<a ng-href="#!/player/{{player.info.firstname.toLowerCase()}}%20{{player.info.surname.toLowerCase()}}">
+			<img ng-src="{{player.info.img}}">
+		</a>
+		<div class="info" style="color: {{player.info.colors.textColor}};">
+			<p>{{player.info.firstname}} {{player.info.surname}}</p>
+			<p>{{player.info.team}} - #{{player.info.number}}</p>
+			<p>{{player.info.exp}}</p>
+		</div>
+	</span>
+</div>
+</div>
+
+<div class="chart-size-controls">
+	<div class="chart-size-up" title="Increase Chart Size">
+		+
+	</div>
+	<div class="chart-size-down" title="Decrease Chart Size">
+		-
+	</div>
+</div>
+
+<h2 class="career-compare-heading" ng-if="!totalYears">
+	Enter a QB name to get started!
+</h2>
+
+<div class="compare-controls">
+<select ng-model="chartStat" type="text" ng-change="changeCareerStat()" class="career-compare-select" ng-class="{show: totalYears}">
+	<option value="yards">Yards</option>
+	<option value="tds">TDs</option>
+	<option value="ints">INTs</option>
+	<option value="attempts">Pass Attempts</option>
+	<option value="completions">Pass Completions</option>
+	<option value="compperc">Completion %</option>
+	<option value="tdperc">TD %</option>
+	<option value="yardsatt">Yards per Attempt</option>
+	<option value="sacks">Sacks</option>
+	<option value="sackyards">Sack Yards</option>
+	<option value="yardspersack">Yards Per Sack</option>
+	<option value="starts">Games Started</option>
+</select>
+</div>
+
+<canvas ng-if="totalYears.length > 0" id="careerCompare" width="600"></div>
+
+
+<script>
+
+$(".chart-size-up").click(function(){
+	if ($('#careerCompare').width() < (window.innerWidth - 100)){
+		console.log("click");
+		var width = $('#careerCompare').width();
+		var height = $('#careerCompare').height();
+		$('#careerCompare').css({"max-width": "" + (width+100) + "px", "width": "" + (width+100) + "px", "height": "" + (height+50) + "px"});
+	}
+})
+
+$(".chart-size-down").click(function(){
+	if ($('#careerCompare').width() > 500){
+		var width = $('#careerCompare').width();
+		var height = $('#careerCompare').height();
+		$('#careerCompare').css({"max-width": "" + (width-100) + "px", "height": "" + (height-50) + "px"});
+	}
+})
+
+setTimeout(function(){
+
+	$(".select-container").on("keyup", ".search-input", function(e){
+		//Go to player page on enter
+
+		if (e.keyCode == 13){
+		//window.location = "#!/player/" + $(this).val().toLowerCase();
+		$(".search-overlay").removeClass("show");
+		}
+
+		//Live search update
+
+		if ($(this).val().length > 2){ 
+
+			$self = $(this);
+
+			$.ajax({
+				url: 'php/livesearch.php?search=' + $(this).val(),
+				success: function(response){
+					$self.siblings(".suggestions").html(response);
+				},
+				error: function(response){
+					console.log("Error! - " + request.status);
+				}
+			})
+
+		}
+
+	});
+
+
+	$(".select-container").on("click", ".suggestions", function(e){
+
+		if (e.target.tagName == "LI"){
+			$(this).siblings(".search-input").val(e.target.innerHTML).change();
+		}
+
+		$(this).html("");
+		$(".search-overlay").removeClass("show");		
+	})
+
+	$(".player-select .search-input").eq(0).focus();
+},120);
+
+</script>

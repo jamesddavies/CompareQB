@@ -1,0 +1,296 @@
+<style>
+
+	.header-container {
+		color: {{ textColor }};
+	}
+
+	nav li a:hover {
+		color: {{ colorMain }};
+	}
+
+	.player-stats #stat-container .chart-btn.active {
+		border-top: 2px solid {{ colorMain }};
+		border-bottom: 2px solid {{ colorSecondary }};
+		background-color: #EEE;
+	}
+
+	.filter .filters .buttons .category.active {
+		background-color: {{ colorMain }};
+	}
+
+	.filter .filters .buttons .category.active h5 {
+		color: {{ textColor }};
+	}
+
+	.filter .filters .filter-select {
+		background-color: {{ colorMain }};
+		color: {{ textColor }};
+	}
+
+	.filter .filters .filter-select .container .row {
+		border-bottom: 2px solid {{ textColor }};
+	}
+
+    .filter .filters .accordion .tab label {
+        background-color: {{ colorMain }};
+    }
+
+    .accordion .tab .tab-content .game.selected {
+        background-color: {{ colorMain }};
+        color: {{ textColor }};
+        opacity: 1;
+    }
+
+</style>
+
+<svg viewBox="0 0 300 340" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="80%" y2="140%">
+            <stop offset="0%" style="stop-color:{{ colorMain }};stop-opacity:1" />
+            <stop offset="100%" style="stop-color:{{ colorSecondary }};stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    <polygon points="0,0 0,208 52,254 129,182 224,315 300,212 300,0" fill="url(#grad1)">
+</svg>
+
+<div class="header-container">
+    <img ng-src="{{info.img}}">
+    <p class="first-name">{{ info.firstname }}</p>
+    <p class="surname">{{ info.surname }}</p>
+    <p class="team">{{ info.team }}</p>
+    <p class="number">#{{ info.number }}</p>
+</div>
+
+<div class="player-info">
+    <h3>Player Information</h3>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="two columns">
+                <p>Born: {{ info.birthdate }}</p>
+            </div>
+            <div class="three columns">
+                <p>Experience: {{ info.exp }}</p>
+            </div>
+            <div class="three columns">
+                <p>College: {{ info.college }}</p>
+            </div>
+            <div class="two columns">
+                <p>Height: <span class="height">{{ info.height }}"</span>
+                </p>
+            </div>
+            <div class="two columns">
+                <p>Weight: {{ info.weight }} lbs</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="twelve columns">
+                <p class="drafted">Drafted: {{ info.draftedYear }} - {{ info.draftedInfo }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="player-stats">
+    <h3>Player Stats</h3>
+    <br>
+    <br>
+    <div id="stat-bg">
+
+        <!--============= FILTER ==============-->
+
+        <div class="filter">
+            <div class="button-drop-container">
+                <div class="button-drop">
+                    <h4>Filter</h4>
+                    <img src="./img/caret-down.png">
+                </div>
+            </div>
+            <div class="filters">
+                <div class="slider">
+                    <div class="slide">
+                        <div class="header">
+                            <span class="slider-prev">&#8249;</span>
+                                <div class="title">
+                                    SORT BY GAME
+                                </div>
+                            <span class="slider-next">&#8250;</span>
+                        </div>
+                        <div class="buttons">
+                            <div class="updateBtn" ng-click="newReq()">Filter Stats</div>
+                            <div class="clearBtn" ng-click="clearAll()">Clear All</div>
+                        </div>
+                        <div class="accordion">
+                            <div class="tab" ng-repeat="year in stats.allYears">
+                                <input ng-attr-id="{{ year }}" type="checkbox" name="tabs">
+                                <label ng-attr-for="{{year}}"><p>{{year}} &#9660;</p><p class="select-all-year" ng-click="addYear(year)">Select All</p></label>
+                                <div class="tab-content">
+                                    <div class="game" ng-repeat="game in stats.games" ng-if="game.year == year" ng-attr-data-value="{{year}}-{{game.week}}" ng-click="addGame(game.year + '-' + game.week)" ng-class="(gameReq.includes(game.year + '-' + game.week)) ? 'selected' : ''">
+                                        Game {{game.week}} - {{game.opp}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="header">
+                            <span class="slider-prev">&#8249;</span>
+                                <div class="title">
+                                    SORT BY OPPOSITION
+                                </div>
+                            <span class="slider-next">&#8250;</span>
+                        </div>
+                        <div class="buttons">
+                            <div class="updateBtn" ng-click="newReq()">Filter Stats</div>
+                            <div class="clearBtn" ng-click="clearAll()">Clear All</div>
+                        </div>
+                        <div class="accordion">
+                            <div class="tab-opp" ng-repeat="(confName,conf) in league">
+                                <input ng-attr-id="{{confName}}" type="checkbox" name="tabs">
+                                <label ng-attr-for="{{confName}}" class="{{confName}}">{{confName}} &#9660;</label>
+                                <div class="tab-content-opp">
+                                    <span ng-repeat="(divName,div) in conf">
+                                    <input ng-attr-id="{{divName}}" type="checkbox" name="tabs">
+                                    <label ng-attr-for="{{divName}}">{{divName}} &#9660;</label>
+                                    <div class="tab-content-opp-inner">
+                                        <div class="team {{team}}" ng-repeat="team in div" ng-click="addOpp(team)" ng-class="(oppReq.includes(team)) ? 'selected' : ''">
+                                            {{team}}
+                                        </div>                        
+                                    </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--============= END FILTER ==============-->
+
+        <div id="stat-container">
+            <div class="container">
+                <div class="row">
+                    <div class="twelve columns">
+                        <h5>{{ statsDescription }}</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="six columns">
+                        <p>Completions/Attempts - {{ pass.cmp }}/{{ pass.att }}</p>
+                        <div class="chart-holder">
+                            <canvas id="compAtt" width="300" height="300"></canvas>
+                        </div>
+                        <div class="chart-stat">
+                            <p>{{ pass.passPercent }}</p>
+                            <p class="subtitle">Completion %</p>
+                        </div>
+                    </div>
+                    <div class="six columns">
+                        <p class="text-stat">{{ pass.yardsAttempt }}
+                            <br><span class="subtitle">Yards per Attempt</span>
+                        </p>
+                        <p class="text-stat">{{ pass.adjYardsAttempt }}
+                            <br><span class="subtitle">Adjusted Yards per Attempt</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="six columns">
+                        <p class="text-stat">{{ pass.yds }}
+                            <br><span class="subtitle">Passing Yards</span>
+                        </p>
+                        <p class="text-stat">{{ pass.passerRating }}
+                            <br><span class="subtitle">Passer Rating</span>
+                        </p>
+                    </div>
+                    <div class="six columns">
+                        <p>Games by Passing Yards</p>
+                        <div class="chart-holder">
+                            <canvas id="gmYds" width="300" height="300"></canvas>
+                        </div>
+                        <div class="chart-stat">
+                            <p>{{ pass.gamesPlayed }}</p>
+                            <p class="subtitle">Total Games</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="six columns">
+                        <p>Touchdown Percentage</p>
+                        <div class="chart-holder">
+                            <canvas id="tdPerc" width="300" height="300"></canvas>
+                        </div>
+                        <div class="chart-stat">
+                            <p>{{ ((pass.td / pass.att) * 100).toFixed(1) }}%</p>
+                            <p class="subtitle">Touchdown %</p>
+                        </div>
+                    </div>
+                    <div class="six columns">
+                        <p class="text-stat">{{ pass.td }}
+                            <br><span class="subtitle">Touchdowns</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="six columns">
+                        <p class="text-stat">{{ pass.int }}
+                            <br><span class="subtitle">Interceptions</span>
+                        </p>
+                    </div>
+                    <div class="six columns">
+                        <p>Interception Percentage</p>
+                        <div class="chart-holder">
+                            <canvas id="intPerc" width="300" height="300"></canvas>
+                        </div>
+                        <div class="chart-stat">
+                            <p>{{ ((pass.int / pass.att) * 100).toFixed(1) }}%</p>
+                            <p class="subtitle">INT %</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="six columns">
+                        <p>Sack Percentage</p>
+                        <div class="chart-holder">
+                            <canvas id="sackPerc" width="300" height="300"></canvas>
+                        </div>
+                        <div class="chart-stat">
+                            <p>{{ ((pass.sacks / pass.att) * 100).toFixed(1) }}%</p>
+                            <p class="subtitle">Sack %</p>
+                        </div>
+                    </div>
+                    <div class="six columns">
+                        <p class="text-stat">{{ pass.sacks }}
+                            <br><span class="subtitle">sacks taken for</span>
+                        </p>
+                        <p class="text-stat">{{ pass.sackYards }}
+                            <br><span class="subtitle">yards</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="twelve columns">
+                        <p>Stats by Year</p>
+                        <button class="chart-btn active" data-func="yards">Yards</button>
+                        <button class="chart-btn" data-func="tds">TDs</button>
+                        <button class="chart-btn" data-func="ints">INTs</button>
+                        <button class="chart-btn" data-func="compperc">Comp %</button>
+                        <button class="chart-btn" data-func="tdperc">TD %</button>
+                        <button class="chart-btn" data-func="competions">Completions</button>
+                        <button class="chart-btn" data-func="attempts">Pass Attempts</button>
+                        <button class="chart-btn" data-func="yardsatt">Y/A</button>
+                        <button class="chart-btn" data-func="sacks">Sacks</button>
+                        <button class="chart-btn" data-func="sackyards">Sack Yards</button>
+                        <button class="chart-btn" data-func="yardspersack">Yards Per Sack</button>
+                        <button class="chart-btn" data-func="starts">Starts</button>
+                        <canvas id="years"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/player-ui-functions.js"></script>

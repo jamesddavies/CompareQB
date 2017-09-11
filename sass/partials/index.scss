@@ -1,0 +1,99 @@
+$fontstack: "Noto Sans", sans-serif;
+
+.index-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	.about-link {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+	}
+	h1 {
+		font-family: $fontstack;
+		font-size: 2.8rem;
+		color: #0FC4DB;
+		.h1-color2 {
+			color: #068C9E;
+		}
+	}
+	h2 {
+		font-family: $fontstack;
+		color: #222;
+		font-size: 1.4rem;
+		margin-top: 40px;
+	}
+	input {
+		margin-top: 12px;
+		width: 280px;
+		font-family: $fontstack;
+		font-size: 1.2rem;
+	}
+	.suggestions {
+		width: 280px;
+		text-align: left;
+		background-color: #DEDEDE;
+		li {
+			padding: 6px 10px;
+			border-bottom: 1px solid #BBB;
+			font-size: 0.8rem;
+			color: #222;
+			font-family: $fontstack;
+			cursor: pointer;
+			transition: all 200ms ease-out;
+			&:hover {
+				color: #0FC4DB;
+			}
+		}
+	}
+	button {
+		margin-top: 8px;
+		width: 280px;
+		font-family: $fontstack;
+		font-size: 0.9rem;
+		padding: 8px 0;
+		background: linear-gradient(60deg, #04B9D1, #88EFFC);
+		border: none;
+		color: #FDFDFD;
+		border-radius: 4px;
+		transition: all 400ms ease-out;
+		&:hover {
+			transform: translateY(1px);
+			color: #888;
+		}
+	}
+	.compare {
+		margin-top: 8px;
+		text-align: center;
+		width: 280px;
+		font-family: $fontstack;
+		font-size: 0.9rem;
+		padding: 8px 0;
+		background-color: #FDFDFD;
+		color: #04B9D1;
+		border-radius: 4px;
+		transition: all 400ms ease-out;
+		cursor: pointer;
+		&:hover {
+			transform: translateY(1px);
+			color: #04B9D1;
+		}
+	}
+	a {
+		text-decoration: none;
+	}
+	.about {
+		font-family: $fontstack;
+		font-size: 14px;
+		color: #333;
+		padding: 20px;
+		text-align: center;
+		line-height: 1.4;
+	}
+}

@@ -1,0 +1,180 @@
+
+@import "compass/reset";
+
+$fontstack: "Noto Sans", sans-serif;
+
+$blue: rgba(89,171,227,1);
+$red: rgba(195,39,43,1);
+
+body {
+	background-color: #EFEFEF;
+	font-size: 10px;
+	overflow-x: hidden;
+}
+
+.slick-slide:focus { outline: none; }
+
+@import "partials/player-header";
+@import "partials/player-info";
+@import "partials/player-stats";
+@import "partials/nav";
+@import "partials/filter";
+@import "partials/index";
+@import "partials/search-overlay";
+@import "partials/compare";
+
+
+@media (min-width: 640px){
+	.header-container {
+		img {
+			top: 40px;
+			right: 80px;
+		}
+		.first-name {
+			margin: 60px 10px 5px 82px;
+			font-size: 2rem;
+		}
+		.surname {
+			margin: 0 10px 10px 80px;
+			font-size: 2.6rem;
+		}
+		.team {
+			margin: 20px 10px 5px 82px;
+			font-size: 1.4rem;
+		}
+		.number {
+			margin: 5px 10px 5px 82px;
+			font-size: 1.4rem;
+		}
+	}
+	.player-info {
+		color: #FDFDFD;
+		margin-top: 0;
+		position: absolute;
+		top: 290px;
+		left: 0;
+		h3 {
+			margin-left: 80px;
+		}
+		.height {
+			white-space: nowrap;
+		}
+		.container {
+			.twelve {
+				text-align: center;
+			}
+			.drafted {
+				margin-top: 20px;
+				text-align: center;
+			}
+		}
+	}
+	.player-stats {
+		color: #FDFDFD;
+		margin-top: 0;
+		position: absolute;
+		top: 460px;
+		left: 0;
+		h3 {
+			margin-left: 80px;
+			margin-bottom: 20px;
+		}
+		#stat-bg {
+			position: relative;
+			background-color: #FCFCFC;
+			width: 80%;
+			margin: 0 auto;
+			box-shadow: 1px 1px 15px 1px #222;
+		}
+		#stat-container {
+			padding-bottom: 20px;
+			.row {
+				display: flex;
+				align-items: center;
+			}
+			.columns {
+				border-bottom: none;
+			}
+		}
+	}
+	.filter {
+		.filters {
+			.accordion {
+				.tab {
+					label {
+						width: 70%;
+					}
+					.tab-content {
+						width: 72.1%;
+					}
+				}
+				.tab-opp {
+					label {
+						width: 70%;
+					}
+					.tab-content-opp {
+						width: 72.1%;
+						label {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+	.index-container {
+		h1 {
+			font-size: 5rem;
+		}
+	}
+	.compare-tool {
+		flex-direction: row;
+		height: 100%;
+		top: 0;
+		.compare-player {
+			flex: grow;
+			margin: 0 14px;
+			max-width: 250px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.compare-filters {
+		flex-direction: row;
+		height: 52px;
+		top: 0;
+	}
+	.select-container {
+		.player-select {
+			width: 48%;
+		}
+	}
+	.chart-size-controls {
+		display: flex;
+	}
+}
+
+@media (min-width: 900px){
+	.filter {
+		.filters {
+			.accordion {
+				.tab {
+					.tab-content {
+						.game {
+							width: 25%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 1100px){
+	.select-container {
+		.player-select {
+			width: 23%;
+		}
+	}
+}

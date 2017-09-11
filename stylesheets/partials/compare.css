@@ -1,0 +1,178 @@
+/* line 3, ../../sass/partials/compare.scss */
+.select-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+  font-family: "Noto Sans", sans-serif;
+  background-color: #FAFAFA;
+  box-shadow: 0px 0px 6px #222;
+}
+/* line 12, ../../sass/partials/compare.scss */
+.select-container .player-select {
+  width: 99%;
+  margin: 10px auto;
+  height: 116px;
+  text-align: center;
+  position: relative;
+}
+/* line 18, ../../sass/partials/compare.scss */
+.select-container .player-select input {
+  width: 80%;
+  max-width: 240px;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+/* line 24, ../../sass/partials/compare.scss */
+.select-container .player-select .suggestions {
+  width: 280px;
+  text-align: left;
+  background-color: #DEDEDE;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+/* line 33, ../../sass/partials/compare.scss */
+.select-container .player-select .suggestions li {
+  padding: 6px 10px;
+  border-bottom: 1px solid #BBB;
+  font-size: 0.6rem;
+  color: #222;
+  font-family: "Noto Sans", sans-serif;
+  cursor: pointer;
+  transition: all 200ms ease-out;
+}
+/* line 41, ../../sass/partials/compare.scss */
+.select-container .player-select .suggestions li:hover {
+  color: #0FC4DB;
+}
+/* line 46, ../../sass/partials/compare.scss */
+.select-container .player-select button {
+  margin-top: 8px;
+  width: 80%;
+  max-width: 240px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 0.7rem;
+  padding: 8px 0;
+  background: linear-gradient(60deg, #04B9D1, #88EFFC);
+  border: none;
+  color: #FDFDFD;
+  border-radius: 4px;
+  transition: all 400ms ease-out;
+  margin-bottom: 20px;
+}
+/* line 59, ../../sass/partials/compare.scss */
+.select-container .player-select button.active:hover {
+  transform: translateY(-1px);
+  color: #888;
+}
+/* line 63, ../../sass/partials/compare.scss */
+.select-container .player-select button.inactive {
+  opacity: 0.7;
+  background: #ccc;
+  pointer-events: none;
+  cursor: default;
+}
+/* line 70, ../../sass/partials/compare.scss */
+.select-container .player-select .erase {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* line 78, ../../sass/partials/compare.scss */
+.select-container .player-select img {
+  height: 100px;
+  margin: 8px 20px;
+  float: left;
+}
+/* line 83, ../../sass/partials/compare.scss */
+.select-container .player-select .info {
+  height: 100px;
+  margin: 8px 20px;
+  float: right;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  max-width: 150px;
+}
+/* line 94, ../../sass/partials/compare.scss */
+.select-container .player-select .info p:first-child {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* line 103, ../../sass/partials/compare.scss */
+#careerCompare {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto 80px auto;
+  transition: all 180ms ease-out;
+}
+
+/* line 110, ../../sass/partials/compare.scss */
+.chart-size-controls {
+  width: 100px;
+  margin-top: 20px;
+  margin-left: 5px;
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+}
+/* line 117, ../../sass/partials/compare.scss */
+.chart-size-controls .chart-size-up, .chart-size-controls .chart-size-down {
+  width: 30px;
+  height: 30px;
+  background-color: #BBB;
+  color: #333;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px 2px 4px;
+  cursor: pointer;
+  transition: all 160ms ease-out;
+}
+/* line 130, ../../sass/partials/compare.scss */
+.chart-size-controls .chart-size-up:hover, .chart-size-controls .chart-size-down:hover {
+  background-color: #999;
+}
+
+/* line 136, ../../sass/partials/compare.scss */
+.career-compare-heading {
+  font-family: "Noto Sans", sans-serif;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 32px;
+  color: #999;
+}
+
+/* line 144, ../../sass/partials/compare.scss */
+.compare-controls {
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+/* line 151, ../../sass/partials/compare.scss */
+.compare-controls .career-compare-select {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  width: 80%;
+  max-width: 240px;
+  display: none;
+}
+/* line 157, ../../sass/partials/compare.scss */
+.compare-controls .career-compare-select.show {
+  display: block;
+}

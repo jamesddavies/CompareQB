@@ -1,0 +1,1310 @@
+/* line 5, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 9, ../sass/screen.scss */
+body {
+  background-color: #EFEFEF;
+  font-size: 10px;
+  overflow-x: hidden;
+}
+
+/* line 15, ../sass/screen.scss */
+.slick-slide:focus {
+  outline: none;
+}
+
+/* line 1, ../sass/partials/player-header.scss */
+.header-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-family: "Noto Sans", sans-serif;
+}
+/* line 7, ../sass/partials/player-header.scss */
+.header-container img {
+  width: 46%;
+  position: absolute;
+  top: 25px;
+  right: 15px;
+  max-width: 200px;
+  z-index: 1;
+}
+/* line 15, ../sass/partials/player-header.scss */
+.header-container .first-name {
+  margin: 50px 10px 5px 18px;
+  font-size: 1.4rem;
+}
+/* line 19, ../sass/partials/player-header.scss */
+.header-container .surname {
+  margin: 0 10px 10px 16px;
+  font-size: 2rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+  display: inline;
+}
+/* line 27, ../sass/partials/player-header.scss */
+.header-container .team {
+  margin: 40px 10px 5px 18px;
+  font-size: 1.1rem;
+}
+/* line 31, ../sass/partials/player-header.scss */
+.header-container .number {
+  margin: 10px 10px 5px 18px;
+  font-size: 1.1rem;
+}
+/* line 35, ../sass/partials/player-header.scss */
+.header-container .error-message {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+}
+
+/* line 1, ../sass/partials/player-info.scss */
+.player-info {
+  margin-top: -80px;
+  width: 100%;
+  font-family: "Noto Sans", sans-serif;
+  color: #222;
+}
+/* line 6, ../sass/partials/player-info.scss */
+.player-info h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 16px;
+}
+/* line 12, ../sass/partials/player-info.scss */
+.player-info .container p {
+  font-size: 1rem;
+  line-height: 1.6;
+  display: inline-block;
+  text-align: center;
+}
+/* line 18, ../sass/partials/player-info.scss */
+.player-info .container .drafted {
+  text-align: left;
+}
+
+/* line 6, ../sass/partials/player-stats.scss */
+.player-stats {
+  margin-top: 80px;
+  width: 100%;
+  font-family: "Noto Sans", sans-serif;
+  color: #222;
+}
+/* line 11, ../sass/partials/player-stats.scss */
+.player-stats h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 16px;
+}
+/* line 16, ../sass/partials/player-stats.scss */
+.player-stats #stats-bg {
+  position: relative;
+  width: 80%;
+}
+/* line 20, ../sass/partials/player-stats.scss */
+.player-stats #stat-container {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  color: #222;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 200px;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: all 250ms ease-out;
+}
+/* line 31, ../sass/partials/player-stats.scss */
+.player-stats #stat-container.show {
+  opacity: 1;
+}
+/* line 34, ../sass/partials/player-stats.scss */
+.player-stats #stat-container h5 {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 20px 0;
+}
+/* line 39, ../sass/partials/player-stats.scss */
+.player-stats #stat-container p {
+  padding: 10px;
+  line-height: 1.2;
+}
+/* line 43, ../sass/partials/player-stats.scss */
+.player-stats #stat-container .columns {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #555;
+}
+/* line 49, ../sass/partials/player-stats.scss */
+.player-stats #stat-container .chart-holder {
+  max-width: 200px;
+  max-height: 200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 8;
+}
+/* line 56, ../sass/partials/player-stats.scss */
+.player-stats #stat-container .chart-stat {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 5;
+}
+/* line 67, ../sass/partials/player-stats.scss */
+.player-stats #stat-container .chart-stat p {
+  font-size: 1.8rem;
+}
+/* line 70, ../sass/partials/player-stats.scss */
+.player-stats #stat-container .chart-stat .subtitle {
+  font-size: 0.8rem;
+}
+/* line 74, ../sass/partials/player-stats.scss */
+.player-stats #stat-container .text-stat {
+  font-size: 2rem;
+  transition: all 150ms ease-out;
+}
+/* line 77, ../sass/partials/player-stats.scss */
+.player-stats #stat-container .text-stat:hover {
+  transform: scale(1.2);
+}
+/* line 78, ../sass/partials/player-stats.scss */
+.player-stats #stat-container .text-stat:hover:first-child {
+  color: #59abe3;
+}
+/* line 81, ../sass/partials/player-stats.scss */
+.player-stats #stat-container .text-stat:hover:last-child {
+  color: #c3272b;
+}
+/* line 86, ../sass/partials/player-stats.scss */
+.player-stats #stat-container .text-stat .subtitle {
+  font-size: 1.2rem;
+  color: #222;
+}
+/* line 91, ../sass/partials/player-stats.scss */
+.player-stats #stat-container .chart-btn {
+  background-color: transparent;
+  color: #222;
+  border-top: 2px solid #DDD;
+  border-bottom: 2px solid #DDD;
+  border-right: none;
+  border-left: none;
+  transition: all 300ms ease-out;
+}
+/* line 99, ../sass/partials/player-stats.scss */
+.player-stats #stat-container .chart-btn:hover {
+  border-top: 2px solid #999;
+  border-bottom: 2px solid #999;
+}
+/* line 103, ../sass/partials/player-stats.scss */
+.player-stats #stat-container .chart-btn:focus {
+  outline: none;
+}
+/* line 107, ../sass/partials/player-stats.scss */
+.player-stats #stat-container #years {
+  width: 100%;
+}
+/* line 110, ../sass/partials/player-stats.scss */
+.player-stats #stat-container button {
+  padding: 6px;
+  margin-bottom: 16px;
+}
+
+/* line 3, ../sass/partials/nav.scss */
+nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 58px;
+  font-family: "Noto Sans", sans-serif;
+  text-align: center;
+  background-color: #FDFDFD;
+  border-top: 1px solid #CCC;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 1000;
+}
+/* line 16, ../sass/partials/nav.scss */
+nav ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  list-style-type: none;
+  text-align: center;
+}
+/* line 25, ../sass/partials/nav.scss */
+nav ul li {
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 0 40px;
+  font-weight: bold;
+}
+/* line 30, ../sass/partials/nav.scss */
+nav ul li:first-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 35, ../sass/partials/nav.scss */
+nav ul li:last-child {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/* line 40, ../sass/partials/nav.scss */
+nav ul li a {
+  color: #222;
+  text-decoration: none;
+  transition: all 150ms ease-out;
+  opacity: 0.6;
+  cursor: pointer;
+}
+/* line 46, ../sass/partials/nav.scss */
+nav ul li a:hover {
+  opacity: 1;
+}
+/* line 50, ../sass/partials/nav.scss */
+nav ul li img {
+  width: 40px;
+}
+
+/* line 3, ../sass/partials/filter.scss */
+.filter {
+  width: 80%;
+  position: relative;
+  margin: 0 auto;
+  font-family: "Noto Sans", sans-serif;
+  color: #222;
+}
+/* line 9, ../sass/partials/filter.scss */
+.filter .button-drop-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  align-self: flex-end;
+  padding-top: 12px;
+}
+/* line 15, ../sass/partials/filter.scss */
+.filter .button-drop-container .button-drop {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+/* line 19, ../sass/partials/filter.scss */
+.filter .button-drop-container .button-drop h4 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+/* line 23, ../sass/partials/filter.scss */
+.filter .button-drop-container .button-drop img {
+  height: 16px;
+  padding-top: 3px;
+}
+/* line 29, ../sass/partials/filter.scss */
+.filter .filters {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  width: 100%;
+  margin-bottom: 80px;
+  padding: 20px 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 10;
+  transition: all 350ms ease-out;
+  transform: translateY(-240%);
+  opacity: 0;
+}
+/* line 41, ../sass/partials/filter.scss */
+.filter .filters.shown {
+  transform: translateY(0);
+  opacity: 1;
+}
+/* line 45, ../sass/partials/filter.scss */
+.filter .filters .header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 22px;
+}
+/* line 50, ../sass/partials/filter.scss */
+.filter .filters .header .slider-prev, .filter .filters .header .slider-next {
+  cursor: pointer;
+}
+
+/* line 57, ../sass/partials/filter.scss */
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+}
+/* line 64, ../sass/partials/filter.scss */
+.buttons .updateBtn {
+  padding: 6px 10px;
+  font-size: 14px;
+  background-color: #ddd;
+  color: #333;
+  cursor: pointer;
+}
+/* line 71, ../sass/partials/filter.scss */
+.buttons .clearBtn {
+  padding: 6px 10px;
+  font-size: 14px;
+  background-color: #ddd;
+  color: #DB092F;
+  cursor: pointer;
+}
+
+/* line 80, ../sass/partials/filter.scss */
+.accordion {
+  margin: 20px 0 0 0;
+}
+/* line 82, ../sass/partials/filter.scss */
+.accordion .tab {
+  position: relative;
+  margin-bottom: 1px;
+  width: 100%;
+  color: #fff;
+  overflow: hidden;
+}
+/* line 88, ../sass/partials/filter.scss */
+.accordion .tab input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+/* line 93, ../sass/partials/filter.scss */
+.accordion .tab input:checked ~ .tab-content {
+  max-height: 600px;
+}
+/* line 96, ../sass/partials/filter.scss */
+.accordion .tab label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 1em;
+  font-weight: bold;
+  line-height: 3;
+  cursor: pointer;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 18px;
+}
+/* line 108, ../sass/partials/filter.scss */
+.accordion .tab label .select-all-year {
+  font-size: 12px;
+  margin-right: 20px;
+  padding: 0 4px;
+  color: #fdfdfd;
+  opacity: 0.5;
+}
+/* line 114, ../sass/partials/filter.scss */
+.accordion .tab label .select-all-year:hover {
+  opacity: 1;
+}
+/* line 117, ../sass/partials/filter.scss */
+.accordion .tab label .select-all-year.selected {
+  opacity: 1;
+}
+/* line 122, ../sass/partials/filter.scss */
+.accordion .tab .tab-content {
+  max-height: 0;
+  overflow: hidden;
+  background: #ccc;
+  transition: all 400ms ease-out;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+/* line 132, ../sass/partials/filter.scss */
+.accordion .tab .tab-content .game {
+  width: 50%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  background-color: #ababab;
+  opacity: 0.6;
+  cursor: pointer;
+}
+/* line 142, ../sass/partials/filter.scss */
+.accordion .tab .tab-content .game:hover {
+  opacity: 1;
+}
+
+/* line 151, ../sass/partials/filter.scss */
+.accordion .tab-opp {
+  position: relative;
+  margin-bottom: 1px;
+  width: 100%;
+  color: #fff;
+  overflow: hidden;
+}
+/* line 157, ../sass/partials/filter.scss */
+.accordion .tab-opp input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+/* line 162, ../sass/partials/filter.scss */
+.accordion .tab-opp input:checked ~ .tab-content-opp {
+  max-height: 600px;
+}
+/* line 165, ../sass/partials/filter.scss */
+.accordion .tab-opp label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 1em;
+  font-weight: bold;
+  line-height: 3;
+  cursor: pointer;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 18px;
+}
+/* line 177, ../sass/partials/filter.scss */
+.accordion .tab-opp label.NFC {
+  background-color: rgba(89, 171, 227, 0.8);
+}
+/* line 180, ../sass/partials/filter.scss */
+.accordion .tab-opp label.AFC {
+  background-color: rgba(195, 39, 43, 0.8);
+}
+/* line 184, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp {
+  max-height: 0;
+  overflow: hidden;
+  background: #ccc;
+  transition: all 400ms ease-out;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+/* line 194, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp span {
+  width: 100%;
+}
+/* line 197, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+/* line 202, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 1em;
+  font-weight: bold;
+  line-height: 3;
+  cursor: pointer;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 18px;
+  background-color: #999;
+}
+/* line 216, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner {
+  max-height: 0;
+  overflow: hidden;
+  background: #ccc;
+  transition: all 400ms ease-out;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+/* line 226, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team {
+  width: 50%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #ababab;
+  opacity: 0.4;
+  cursor: pointer;
+}
+/* line 237, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team:hover {
+  opacity: 1;
+}
+/* line 240, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.selected {
+  opacity: 1;
+}
+/* line 243, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.CHI {
+  color: #DD4814;
+  background-color: #03202F;
+}
+/* line 247, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.DET {
+  color: #C5C7CF;
+  background-color: #006DB0;
+}
+/* line 251, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.GB {
+  color: #FFB612;
+  background-color: #203731;
+}
+/* line 255, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.MIN {
+  color: #F0BF00;
+  background-color: #582C81;
+}
+/* line 260, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.ATL {
+  color: #A6192D;
+  background-color: #000;
+}
+/* line 264, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.CAR {
+  color: #101820;
+  background-color: #0085CA;
+}
+/* line 268, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.NO {
+  color: #000;
+  background-color: #D2B887;
+}
+/* line 272, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.TB {
+  color: #89765F;
+  background-color: #D60A0B;
+}
+/* line 277, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.DAL {
+  color: #87909B;
+  background-color: #0D254C;
+}
+/* line 281, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.NYG {
+  color: #FFF;
+  background-color: #192F6B;
+}
+/* line 285, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.PHI {
+  color: #C0C0C0;
+  background-color: #003B48;
+}
+/* line 289, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.WAS {
+  color: #FFB612;
+  background-color: #773141;
+}
+/* line 294, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.ARI {
+  color: #FFF;
+  background-color: #9B2743;
+}
+/* line 298, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.LAR {
+  color: #13264B;
+  background-color: #C9AF74;
+}
+/* line 302, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.SEA {
+  color: #4DFF00;
+  background-color: #001433;
+}
+/* line 306, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.SF {
+  color: #AF1E2C;
+  background-color: #E6BE8A;
+}
+/* line 311, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.BAL {
+  color: #D0B240;
+  background-color: #280353;
+}
+/* line 315, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.CIN {
+  color: #000;
+  background-color: #FB4F14;
+}
+/* line 319, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.CLE {
+  color: #301f10;
+  background-color: #eb3300;
+}
+/* line 323, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.PIT {
+  color: #FFB81C;
+  background-color: #101820;
+}
+/* line 328, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.HOU {
+  color: #02253A;
+  background-color: #B31B34;
+}
+/* line 332, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.IND {
+  color: #FFF;
+  background-color: #003B7B;
+}
+/* line 336, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.JAX {
+  color: #006778;
+  background-color: #000;
+}
+/* line 340, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.TEN {
+  color: #0D254C;
+  background-color: #648FCC;
+}
+/* line 345, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.BUF {
+  color: #C60C30;
+  background-color: #00338D;
+}
+/* line 349, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.MIA {
+  color: #F5811F;
+  background-color: #008D97;
+}
+/* line 353, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.NE {
+  color: #0C2340;
+  background-color: #C8102E;
+}
+/* line 357, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.NYJ {
+  color: #FFF;
+  background-color: #0C371D;
+}
+/* line 362, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.DEN {
+  color: #002244;
+  background-color: #FB4F14;
+}
+/* line 366, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.KC {
+  color: #F2C800;
+  background-color: #B20032;
+}
+/* line 370, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.LAC {
+  color: #FFB81C;
+  background-color: #0072CE;
+}
+/* line 374, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.OAK {
+  color: #C4C8CB;
+  background-color: #000;
+}
+/* line 380, ../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp input:checked ~ .tab-content-opp-inner {
+  max-height: 600px;
+}
+
+/* line 3, ../sass/partials/index.scss */
+.index-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+/* line 13, ../sass/partials/index.scss */
+.index-container .about-link {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+/* line 18, ../sass/partials/index.scss */
+.index-container h1 {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 2.8rem;
+  color: #0FC4DB;
+}
+/* line 22, ../sass/partials/index.scss */
+.index-container h1 .h1-color2 {
+  color: #068C9E;
+}
+/* line 26, ../sass/partials/index.scss */
+.index-container h2 {
+  font-family: "Noto Sans", sans-serif;
+  color: #222;
+  font-size: 1.4rem;
+  margin-top: 40px;
+}
+/* line 32, ../sass/partials/index.scss */
+.index-container input {
+  margin-top: 12px;
+  width: 280px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1.2rem;
+}
+/* line 38, ../sass/partials/index.scss */
+.index-container .suggestions {
+  width: 280px;
+  text-align: left;
+  background-color: #DEDEDE;
+}
+/* line 42, ../sass/partials/index.scss */
+.index-container .suggestions li {
+  padding: 6px 10px;
+  border-bottom: 1px solid #BBB;
+  font-size: 0.8rem;
+  color: #222;
+  font-family: "Noto Sans", sans-serif;
+  cursor: pointer;
+  transition: all 200ms ease-out;
+}
+/* line 50, ../sass/partials/index.scss */
+.index-container .suggestions li:hover {
+  color: #0FC4DB;
+}
+/* line 55, ../sass/partials/index.scss */
+.index-container button {
+  margin-top: 8px;
+  width: 280px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 0.9rem;
+  padding: 8px 0;
+  background: linear-gradient(60deg, #04B9D1, #88EFFC);
+  border: none;
+  color: #FDFDFD;
+  border-radius: 4px;
+  transition: all 400ms ease-out;
+}
+/* line 66, ../sass/partials/index.scss */
+.index-container button:hover {
+  transform: translateY(1px);
+  color: #888;
+}
+/* line 71, ../sass/partials/index.scss */
+.index-container .compare {
+  margin-top: 8px;
+  text-align: center;
+  width: 280px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 0.9rem;
+  padding: 8px 0;
+  background-color: #FDFDFD;
+  color: #04B9D1;
+  border-radius: 4px;
+  transition: all 400ms ease-out;
+  cursor: pointer;
+}
+/* line 83, ../sass/partials/index.scss */
+.index-container .compare:hover {
+  transform: translateY(1px);
+  color: #04B9D1;
+}
+/* line 88, ../sass/partials/index.scss */
+.index-container a {
+  text-decoration: none;
+}
+/* line 91, ../sass/partials/index.scss */
+.index-container .about {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  color: #333;
+  padding: 20px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* line 3, ../sass/partials/search-overlay.scss */
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  z-index: 10;
+  transform: translateY(-100%);
+  transition: all 300ms ease-out;
+}
+/* line 18, ../sass/partials/search-overlay.scss */
+.search-overlay.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* line 22, ../sass/partials/search-overlay.scss */
+.search-overlay input {
+  margin-top: 12px;
+  width: 280px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1.2rem;
+}
+/* line 28, ../sass/partials/search-overlay.scss */
+.search-overlay .suggestions {
+  width: 280px;
+  text-align: left;
+  background-color: #DEDEDE;
+}
+/* line 32, ../sass/partials/search-overlay.scss */
+.search-overlay .suggestions li {
+  padding: 6px 10px;
+  border-bottom: 1px solid #BBB;
+  font-size: 0.8rem;
+  color: #222;
+  font-family: "Noto Sans", sans-serif;
+  cursor: pointer;
+  transition: all 200ms ease-out;
+}
+/* line 40, ../sass/partials/search-overlay.scss */
+.search-overlay .suggestions li:hover {
+  color: #0FC4DB;
+}
+/* line 45, ../sass/partials/search-overlay.scss */
+.search-overlay button {
+  margin-top: 8px;
+  width: 280px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 0.9rem;
+  padding: 8px 0;
+  background: linear-gradient(60deg, #04B9D1, #88EFFC);
+  border: none;
+  color: #FDFDFD;
+  border-radius: 4px;
+  transition: all 400ms ease-out;
+}
+/* line 56, ../sass/partials/search-overlay.scss */
+.search-overlay button:hover {
+  transform: translateY(-1px);
+  color: #888;
+}
+
+/* line 3, ../sass/partials/compare.scss */
+.select-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+  font-family: "Noto Sans", sans-serif;
+  background-color: #FAFAFA;
+  box-shadow: 0px 0px 6px #222;
+}
+/* line 12, ../sass/partials/compare.scss */
+.select-container .player-select {
+  width: 99%;
+  margin: 10px auto;
+  height: 116px;
+  text-align: center;
+  position: relative;
+}
+/* line 18, ../sass/partials/compare.scss */
+.select-container .player-select input {
+  width: 80%;
+  max-width: 240px;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+/* line 24, ../sass/partials/compare.scss */
+.select-container .player-select .suggestions {
+  width: 280px;
+  text-align: left;
+  background-color: #DEDEDE;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+/* line 33, ../sass/partials/compare.scss */
+.select-container .player-select .suggestions li {
+  padding: 6px 10px;
+  border-bottom: 1px solid #BBB;
+  font-size: 0.6rem;
+  color: #222;
+  font-family: "Noto Sans", sans-serif;
+  cursor: pointer;
+  transition: all 200ms ease-out;
+}
+/* line 41, ../sass/partials/compare.scss */
+.select-container .player-select .suggestions li:hover {
+  color: #0FC4DB;
+}
+/* line 46, ../sass/partials/compare.scss */
+.select-container .player-select button {
+  margin-top: 8px;
+  width: 80%;
+  max-width: 240px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 0.7rem;
+  padding: 8px 0;
+  background: linear-gradient(60deg, #04B9D1, #88EFFC);
+  border: none;
+  color: #FDFDFD;
+  border-radius: 4px;
+  transition: all 400ms ease-out;
+  margin-bottom: 20px;
+}
+/* line 59, ../sass/partials/compare.scss */
+.select-container .player-select button.active:hover {
+  transform: translateY(-1px);
+  color: #888;
+}
+/* line 63, ../sass/partials/compare.scss */
+.select-container .player-select button.inactive {
+  opacity: 0.7;
+  background: #ccc;
+  pointer-events: none;
+  cursor: default;
+}
+/* line 70, ../sass/partials/compare.scss */
+.select-container .player-select .erase {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* line 78, ../sass/partials/compare.scss */
+.select-container .player-select img {
+  height: 100px;
+  margin: 8px 20px;
+  float: left;
+}
+/* line 83, ../sass/partials/compare.scss */
+.select-container .player-select .info {
+  height: 100px;
+  margin: 8px 20px;
+  float: right;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  max-width: 150px;
+}
+/* line 94, ../sass/partials/compare.scss */
+.select-container .player-select .info p:first-child {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* line 103, ../sass/partials/compare.scss */
+#careerCompare {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto 80px auto;
+  transition: all 180ms ease-out;
+}
+
+/* line 110, ../sass/partials/compare.scss */
+.chart-size-controls {
+  width: 100px;
+  margin-top: 20px;
+  margin-left: 5px;
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+}
+/* line 117, ../sass/partials/compare.scss */
+.chart-size-controls .chart-size-up, .chart-size-controls .chart-size-down {
+  width: 30px;
+  height: 30px;
+  background-color: #BBB;
+  color: #333;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px 2px 4px;
+  cursor: pointer;
+  transition: all 160ms ease-out;
+}
+/* line 130, ../sass/partials/compare.scss */
+.chart-size-controls .chart-size-up:hover, .chart-size-controls .chart-size-down:hover {
+  background-color: #999;
+}
+
+/* line 136, ../sass/partials/compare.scss */
+.career-compare-heading {
+  font-family: "Noto Sans", sans-serif;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 32px;
+  color: #999;
+}
+
+/* line 144, ../sass/partials/compare.scss */
+.compare-controls {
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+/* line 151, ../sass/partials/compare.scss */
+.compare-controls .career-compare-select {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  width: 80%;
+  max-width: 240px;
+  display: none;
+}
+/* line 157, ../sass/partials/compare.scss */
+.compare-controls .career-compare-select.show {
+  display: block;
+}
+
+@media (min-width: 640px) {
+  /* line 29, ../sass/screen.scss */
+  .header-container img {
+    top: 40px;
+    right: 80px;
+  }
+  /* line 33, ../sass/screen.scss */
+  .header-container .first-name {
+    margin: 60px 10px 5px 82px;
+    font-size: 2rem;
+  }
+  /* line 37, ../sass/screen.scss */
+  .header-container .surname {
+    margin: 0 10px 10px 80px;
+    font-size: 2.6rem;
+  }
+  /* line 41, ../sass/screen.scss */
+  .header-container .team {
+    margin: 20px 10px 5px 82px;
+    font-size: 1.4rem;
+  }
+  /* line 45, ../sass/screen.scss */
+  .header-container .number {
+    margin: 5px 10px 5px 82px;
+    font-size: 1.4rem;
+  }
+
+  /* line 50, ../sass/screen.scss */
+  .player-info {
+    color: #FDFDFD;
+    margin-top: 0;
+    position: absolute;
+    top: 290px;
+    left: 0;
+  }
+  /* line 56, ../sass/screen.scss */
+  .player-info h3 {
+    margin-left: 80px;
+  }
+  /* line 59, ../sass/screen.scss */
+  .player-info .height {
+    white-space: nowrap;
+  }
+  /* line 63, ../sass/screen.scss */
+  .player-info .container .twelve {
+    text-align: center;
+  }
+  /* line 66, ../sass/screen.scss */
+  .player-info .container .drafted {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  /* line 72, ../sass/screen.scss */
+  .player-stats {
+    color: #FDFDFD;
+    margin-top: 0;
+    position: absolute;
+    top: 460px;
+    left: 0;
+  }
+  /* line 78, ../sass/screen.scss */
+  .player-stats h3 {
+    margin-left: 80px;
+    margin-bottom: 20px;
+  }
+  /* line 82, ../sass/screen.scss */
+  .player-stats #stat-bg {
+    position: relative;
+    background-color: #FCFCFC;
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 1px 1px 15px 1px #222;
+  }
+  /* line 89, ../sass/screen.scss */
+  .player-stats #stat-container {
+    padding-bottom: 20px;
+  }
+  /* line 91, ../sass/screen.scss */
+  .player-stats #stat-container .row {
+    display: flex;
+    align-items: center;
+  }
+  /* line 95, ../sass/screen.scss */
+  .player-stats #stat-container .columns {
+    border-bottom: none;
+  }
+
+  /* line 104, ../sass/screen.scss */
+  .filter .filters .accordion .tab label {
+    width: 70%;
+  }
+  /* line 107, ../sass/screen.scss */
+  .filter .filters .accordion .tab .tab-content {
+    width: 72.1%;
+  }
+  /* line 112, ../sass/screen.scss */
+  .filter .filters .accordion .tab-opp label {
+    width: 70%;
+  }
+  /* line 115, ../sass/screen.scss */
+  .filter .filters .accordion .tab-opp .tab-content-opp {
+    width: 72.1%;
+  }
+  /* line 117, ../sass/screen.scss */
+  .filter .filters .accordion .tab-opp .tab-content-opp label {
+    width: 100%;
+  }
+
+  /* line 126, ../sass/screen.scss */
+  .index-container h1 {
+    font-size: 5rem;
+  }
+
+  /* line 130, ../sass/screen.scss */
+  .compare-tool {
+    flex-direction: row;
+    height: 100%;
+    top: 0;
+  }
+  /* line 134, ../sass/screen.scss */
+  .compare-tool .compare-player {
+    flex: grow;
+    margin: 0 14px;
+    max-width: 250px;
+  }
+  /* line 138, ../sass/screen.scss */
+  .compare-tool .compare-player:last-child {
+    margin-bottom: 0;
+  }
+
+  /* line 143, ../sass/screen.scss */
+  .compare-filters {
+    flex-direction: row;
+    height: 52px;
+    top: 0;
+  }
+
+  /* line 149, ../sass/screen.scss */
+  .select-container .player-select {
+    width: 48%;
+  }
+
+  /* line 153, ../sass/screen.scss */
+  .chart-size-controls {
+    display: flex;
+  }
+}
+@media (min-width: 900px) {
+  /* line 164, ../sass/screen.scss */
+  .filter .filters .accordion .tab .tab-content .game {
+    width: 25%;
+  }
+}
+@media (min-width: 1100px) {
+  /* line 176, ../sass/screen.scss */
+  .select-container .player-select {
+    width: 23%;
+  }
+}

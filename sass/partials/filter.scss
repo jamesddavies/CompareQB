@@ -1,0 +1,385 @@
+$fontstack: "Noto Sans", sans-serif;
+
+.filter {
+	width: 80%;
+	position: relative;
+	margin: 0 auto;
+	font-family: $fontstack;
+	color: #222;
+	.button-drop-container {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		align-self: flex-end;
+		padding-top: 12px;
+		.button-drop {
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+			h4 {
+				font-size: 1rem;
+				font-weight: bold;
+			}
+			img {
+				height: 16px;
+				padding-top: 3px;
+			}
+		}
+	}
+	.filters {
+		position: absolute;
+		top: 44px;
+		left: 0;
+		width: 100%;
+		margin-bottom: 80px;
+		padding: 20px 0;
+		background-color: rgba(255,255,255,0.9);
+		z-index: 10;
+		transition: all 350ms ease-out;
+		transform: translateY(-240%);
+		opacity: 0;
+		&.shown {
+			transform: translateY(0);
+			opacity: 1;
+		}
+		.header {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			font-size: 22px;
+			.slider-prev, .slider-next {
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.buttons {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 100%;
+	height: 40px;
+	margin-top: 20px;
+	.updateBtn {
+		padding: 6px 10px;
+		font-size: 14px;
+		background-color: #ddd;
+		color: #333;
+		cursor: pointer;
+	}
+	.clearBtn {
+		padding: 6px 10px;
+		font-size: 14px;
+		background-color: #ddd;
+		color: #DB092F;
+		cursor: pointer;
+	}
+}
+
+.accordion {
+    margin: 20px 0 0 0;
+    .tab {
+        position: relative;
+        margin-bottom: 1px;
+        width: 100%;
+        color: #fff;
+        overflow: hidden;
+        input {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+        }
+        input:checked ~ .tab-content {
+            max-height: 600px;
+        }
+        label {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 0 0 1em;
+            font-weight: bold;
+            line-height: 3;
+            cursor: pointer;
+            width: 100%;
+            margin: 0 auto;
+            font-size: 18px;
+            .select-all-year {
+            	font-size: 12px;
+            	margin-right: 20px;
+            	padding: 0 4px;
+            	color: #fdfdfd;
+            	opacity: 0.5;
+            	&:hover {
+            		opacity: 1;
+            	}
+            	&.selected {
+            		opacity: 1;
+            	}
+            }
+        }
+        .tab-content {
+            max-height: 0;
+            overflow: hidden;
+            background: #ccc;
+            transition: all 400ms ease-out;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            .game {
+                width: 50%;
+                height: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 14px;
+                background-color: #ababab;
+                opacity: 0.6;
+                cursor: pointer;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.accordion {
+    .tab-opp {
+        position: relative;
+        margin-bottom: 1px;
+        width: 100%;
+        color: #fff;
+        overflow: hidden;
+        input {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+        }
+        input:checked ~ .tab-content-opp {
+            max-height: 600px;
+        }
+        label {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 0 0 1em;
+            font-weight: bold;
+            line-height: 3;
+            cursor: pointer;
+            width: 100%;
+            margin: 0 auto;
+            font-size: 18px;
+            &.NFC {
+                background-color: rgba(89, 171, 227, 0.8);
+            }
+            &.AFC {
+                background-color: rgba(195, 39, 43, 0.8);
+            }
+        }
+        .tab-content-opp {
+            max-height: 0;
+            overflow: hidden;
+            background: #ccc;
+            transition: all 400ms ease-out;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            span {
+                width: 100%;
+            }
+            input {
+                position: absolute;
+                opacity: 0;
+                z-index: -1;
+            }
+            label {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 0 0 1em;
+                font-weight: bold;
+                line-height: 3;
+                cursor: pointer;
+                width: 100%;
+                margin: 0 auto;
+                font-size: 18px;
+                background-color: #999;
+            }
+            .tab-content-opp-inner {
+                max-height: 0;
+                overflow: hidden;
+                background: #ccc;
+                transition: all 400ms ease-out;
+                width: 100%;
+                margin: 0 auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                .team {
+                    width: 50%;
+                    height: 60px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 18px;
+                    font-weight: bold;
+                    background-color: #ababab;
+                    opacity: 0.4;
+                    cursor: pointer;
+                    &:hover {
+                    	opacity: 1;
+                    }
+                    &.selected {
+                    	opacity: 1;
+                    }
+                    &.CHI {
+                        color: #DD4814;
+                        background-color: #03202F;
+                    }
+                    &.DET {
+                    	color: #C5C7CF;
+                        background-color: #006DB0;
+                    }
+                    &.GB {
+                    	color: #FFB612;
+                        background-color: #203731;
+                    }
+                    &.MIN {
+                    	color: #F0BF00;
+                    	background-color: #582C81;
+                    }
+
+                    &.ATL {
+                    	color: #A6192D;
+                    	background-color: #000;
+                    }
+                    &.CAR {
+                    	color: #101820;
+                    	background-color: #0085CA;
+                    }
+                    &.NO {
+                    	color: #000;
+                    	background-color: #D2B887;
+                    }
+                    &.TB {
+                    	color: #89765F;
+                    	background-color: #D60A0B;
+                    }
+
+                    &.DAL {
+                    	color: #87909B;
+                    	background-color: #0D254C;
+                    }
+                    &.NYG {
+                    	color: #FFF;
+                    	background-color: #192F6B;
+                    }
+                    &.PHI {
+                    	color: #C0C0C0;
+                    	background-color: #003B48;
+                    }
+                    &.WAS {
+                    	color: #FFB612;
+                    	background-color: #773141;
+                    }
+
+                    &.ARI {
+                    	color: #FFF;
+                    	background-color: #9B2743;
+                    }
+                    &.LAR {
+                    	color: #13264B;
+                    	background-color: #C9AF74;
+                    }
+                    &.SEA {
+                    	color: #4DFF00;
+                    	background-color: #001433;
+                    }
+                    &.SF {
+                    	color: #AF1E2C;
+                    	background-color: #E6BE8A;
+                    }
+
+                    &.BAL {
+                    	color: #D0B240;
+                    	background-color: #280353;
+                    }
+                    &.CIN {
+                    	color: #000;
+                    	background-color: #FB4F14;
+                    }
+                    &.CLE {
+                    	color: #301f10;
+                    	background-color: #eb3300;
+                    }
+                    &.PIT {
+                    	color: #FFB81C;
+                    	background-color: #101820;
+                    }
+
+                    &.HOU {
+                    	color: #02253A;
+                    	background-color: #B31B34;
+                    }
+                    &.IND {
+                    	color: #FFF;
+                    	background-color: #003B7B;
+                    }
+                    &.JAX {
+                    	color: #006778;
+                    	background-color: #000;
+                    }
+                    &.TEN {
+                    	color: #0D254C;
+                    	background-color: #648FCC;
+                    }
+
+                    &.BUF {
+                    	color: #C60C30;
+                    	background-color: #00338D;
+                    }
+                    &.MIA {
+                    	color: #F5811F;
+                    	background-color: #008D97;
+                    }
+                    &.NE {
+                    	color: #0C2340;
+                    	background-color: #C8102E;
+                    }
+                    &.NYJ {
+                    	color: #FFF;
+                    	background-color: #0C371D;
+                    }
+
+                    &.DEN {
+                    	color: #002244;
+                    	background-color: #FB4F14;
+                    }
+                    &.KC {
+                    	color: #F2C800;
+                    	background-color: #B20032;
+                    }
+                    &.LAC {
+                    	color: #FFB81C;
+                    	background-color: #0072CE;
+                    }
+                    &.OAK {
+                    	color: #C4C8CB;
+                    	background-color: #000;
+                    }
+                }
+            }
+            input:checked ~ .tab-content-opp-inner {
+                max-height: 600px;
+            }
+        }
+    }
+}

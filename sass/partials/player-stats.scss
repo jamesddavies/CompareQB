@@ -1,0 +1,115 @@
+$fontstack: "Noto Sans", sans-serif;
+
+$blue: rgba(89,171,227,1);
+$red: rgba(195,39,43,1);
+
+.player-stats {
+	margin-top: 80px;
+	width: 100%;
+	font-family: $fontstack;
+	color: #222;
+	h3 {
+		font-size: 1.2rem;
+		font-weight: bold;
+		margin-left: 16px;
+	}
+	#stats-bg {
+		position: relative;
+		width: 80%;
+	}
+	#stat-container {
+		position: relative;
+		z-index: 5;
+		text-align: center;
+		color: #222;
+		width: 80%;
+		margin: 0 auto;
+		margin-bottom: 200px;
+		font-size: 0.9rem;
+		opacity: 0;
+		transition: all 250ms ease-out;
+		&.show {
+			opacity: 1;
+		}
+		h5 {
+			font-size: 1rem;
+			font-weight: bold;
+			padding: 20px 0;
+		}
+		p {
+			padding: 10px;
+			line-height: 1.2;
+		}
+		.columns {
+			position: relative;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			border-bottom: 1px solid #555;
+		}
+		.chart-holder {
+			max-width: 200px;
+			max-height: 200px;
+			margin: 0 auto;
+			position: relative;
+			z-index: 8;
+		}
+		.chart-stat {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 85%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			z-index: 5;
+			p {
+				font-size: 1.8rem;
+			}
+			.subtitle {
+				font-size: 0.8rem;
+			}
+		}
+		.text-stat {
+			font-size: 2rem;
+			transition: all 150ms ease-out;
+			&:hover {
+				&:first-child {
+					color: $blue;
+				}
+				&:last-child {
+					color: $red;
+				}
+				transform: scale(1.2);
+			}
+			.subtitle {
+				font-size: 1.2rem;
+				color: #222;
+			}
+		}
+		.chart-btn {
+			background-color: transparent;
+			color: #222;
+			border-top: 2px solid #DDD;
+			border-bottom: 2px solid #DDD;
+			border-right: none;
+			border-left: none;
+			transition: all 300ms ease-out;
+			&:hover {
+				border-top: 2px solid #999;
+				border-bottom: 2px solid #999;
+			}
+			&:focus {
+				outline: none;
+			}
+		}
+		#years {
+			width: 100%;
+		}
+		button {
+			padding: 6px;
+			margin-bottom: 16px;
+		}
+	}
+}

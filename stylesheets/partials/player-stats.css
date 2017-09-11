@@ -1,0 +1,132 @@
+/* line 6, ../../sass/partials/player-stats.scss */
+.player-stats {
+  margin-top: 80px;
+  width: 100%;
+  font-family: "Noto Sans", sans-serif;
+  color: #222;
+}
+/* line 11, ../../sass/partials/player-stats.scss */
+.player-stats h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 16px;
+}
+/* line 16, ../../sass/partials/player-stats.scss */
+.player-stats #stats-bg {
+  position: relative;
+  width: 80%;
+}
+/* line 20, ../../sass/partials/player-stats.scss */
+.player-stats #stat-container {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  color: #222;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 200px;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: all 250ms ease-out;
+}
+/* line 31, ../../sass/partials/player-stats.scss */
+.player-stats #stat-container.show {
+  opacity: 1;
+}
+/* line 34, ../../sass/partials/player-stats.scss */
+.player-stats #stat-container h5 {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 20px 0;
+}
+/* line 39, ../../sass/partials/player-stats.scss */
+.player-stats #stat-container p {
+  padding: 10px;
+  line-height: 1.2;
+}
+/* line 43, ../../sass/partials/player-stats.scss */
+.player-stats #stat-container .columns {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #555;
+}
+/* line 49, ../../sass/partials/player-stats.scss */
+.player-stats #stat-container .chart-holder {
+  max-width: 200px;
+  max-height: 200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 8;
+}
+/* line 56, ../../sass/partials/player-stats.scss */
+.player-stats #stat-container .chart-stat {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 5;
+}
+/* line 67, ../../sass/partials/player-stats.scss */
+.player-stats #stat-container .chart-stat p {
+  font-size: 1.8rem;
+}
+/* line 70, ../../sass/partials/player-stats.scss */
+.player-stats #stat-container .chart-stat .subtitle {
+  font-size: 0.8rem;
+}
+/* line 74, ../../sass/partials/player-stats.scss */
+.player-stats #stat-container .text-stat {
+  font-size: 2rem;
+  transition: all 150ms ease-out;
+}
+/* line 77, ../../sass/partials/player-stats.scss */
+.player-stats #stat-container .text-stat:hover {
+  transform: scale(1.2);
+}
+/* line 78, ../../sass/partials/player-stats.scss */
+.player-stats #stat-container .text-stat:hover:first-child {
+  color: #59abe3;
+}
+/* line 81, ../../sass/partials/player-stats.scss */
+.player-stats #stat-container .text-stat:hover:last-child {
+  color: #c3272b;
+}
+/* line 86, ../../sass/partials/player-stats.scss */
+.player-stats #stat-container .text-stat .subtitle {
+  font-size: 1.2rem;
+  color: #222;
+}
+/* line 91, ../../sass/partials/player-stats.scss */
+.player-stats #stat-container .chart-btn {
+  background-color: transparent;
+  color: #222;
+  border-top: 2px solid #DDD;
+  border-bottom: 2px solid #DDD;
+  border-right: none;
+  border-left: none;
+  transition: all 300ms ease-out;
+}
+/* line 99, ../../sass/partials/player-stats.scss */
+.player-stats #stat-container .chart-btn:hover {
+  border-top: 2px solid #999;
+  border-bottom: 2px solid #999;
+}
+/* line 103, ../../sass/partials/player-stats.scss */
+.player-stats #stat-container .chart-btn:focus {
+  outline: none;
+}
+/* line 107, ../../sass/partials/player-stats.scss */
+.player-stats #stat-container #years {
+  width: 100%;
+}
+/* line 110, ../../sass/partials/player-stats.scss */
+.player-stats #stat-container button {
+  padding: 6px;
+  margin-bottom: 16px;
+}

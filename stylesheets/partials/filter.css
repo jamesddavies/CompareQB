@@ -1,0 +1,444 @@
+/* line 3, ../../sass/partials/filter.scss */
+.filter {
+  width: 80%;
+  position: relative;
+  margin: 0 auto;
+  font-family: "Noto Sans", sans-serif;
+  color: #222;
+}
+/* line 9, ../../sass/partials/filter.scss */
+.filter .button-drop-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  align-self: flex-end;
+  padding-top: 12px;
+}
+/* line 15, ../../sass/partials/filter.scss */
+.filter .button-drop-container .button-drop {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+/* line 19, ../../sass/partials/filter.scss */
+.filter .button-drop-container .button-drop h4 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+/* line 23, ../../sass/partials/filter.scss */
+.filter .button-drop-container .button-drop img {
+  height: 16px;
+  padding-top: 3px;
+}
+/* line 29, ../../sass/partials/filter.scss */
+.filter .filters {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  width: 100%;
+  margin-bottom: 80px;
+  padding: 20px 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 10;
+  transition: all 350ms ease-out;
+  transform: translateY(-240%);
+  opacity: 0;
+}
+/* line 41, ../../sass/partials/filter.scss */
+.filter .filters.shown {
+  transform: translateY(0);
+  opacity: 1;
+}
+/* line 45, ../../sass/partials/filter.scss */
+.filter .filters .header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 22px;
+}
+/* line 50, ../../sass/partials/filter.scss */
+.filter .filters .header .slider-prev, .filter .filters .header .slider-next {
+  cursor: pointer;
+}
+
+/* line 57, ../../sass/partials/filter.scss */
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+}
+/* line 64, ../../sass/partials/filter.scss */
+.buttons .updateBtn {
+  padding: 6px 10px;
+  font-size: 14px;
+  background-color: #ddd;
+  color: #333;
+  cursor: pointer;
+}
+/* line 71, ../../sass/partials/filter.scss */
+.buttons .clearBtn {
+  padding: 6px 10px;
+  font-size: 14px;
+  background-color: #ddd;
+  color: #DB092F;
+  cursor: pointer;
+}
+
+/* line 80, ../../sass/partials/filter.scss */
+.accordion {
+  margin: 20px 0 0 0;
+}
+/* line 82, ../../sass/partials/filter.scss */
+.accordion .tab {
+  position: relative;
+  margin-bottom: 1px;
+  width: 100%;
+  color: #fff;
+  overflow: hidden;
+}
+/* line 88, ../../sass/partials/filter.scss */
+.accordion .tab input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+/* line 93, ../../sass/partials/filter.scss */
+.accordion .tab input:checked ~ .tab-content {
+  max-height: 600px;
+}
+/* line 96, ../../sass/partials/filter.scss */
+.accordion .tab label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 1em;
+  font-weight: bold;
+  line-height: 3;
+  cursor: pointer;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 18px;
+}
+/* line 108, ../../sass/partials/filter.scss */
+.accordion .tab label .select-all-year {
+  font-size: 12px;
+  margin-right: 20px;
+  padding: 0 4px;
+  color: #fdfdfd;
+  opacity: 0.5;
+}
+/* line 114, ../../sass/partials/filter.scss */
+.accordion .tab label .select-all-year:hover {
+  opacity: 1;
+}
+/* line 117, ../../sass/partials/filter.scss */
+.accordion .tab label .select-all-year.selected {
+  opacity: 1;
+}
+/* line 122, ../../sass/partials/filter.scss */
+.accordion .tab .tab-content {
+  max-height: 0;
+  overflow: hidden;
+  background: #ccc;
+  transition: all 400ms ease-out;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+/* line 132, ../../sass/partials/filter.scss */
+.accordion .tab .tab-content .game {
+  width: 50%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  background-color: #ababab;
+  opacity: 0.6;
+  cursor: pointer;
+}
+/* line 142, ../../sass/partials/filter.scss */
+.accordion .tab .tab-content .game:hover {
+  opacity: 1;
+}
+
+/* line 151, ../../sass/partials/filter.scss */
+.accordion .tab-opp {
+  position: relative;
+  margin-bottom: 1px;
+  width: 100%;
+  color: #fff;
+  overflow: hidden;
+}
+/* line 157, ../../sass/partials/filter.scss */
+.accordion .tab-opp input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+/* line 162, ../../sass/partials/filter.scss */
+.accordion .tab-opp input:checked ~ .tab-content-opp {
+  max-height: 600px;
+}
+/* line 165, ../../sass/partials/filter.scss */
+.accordion .tab-opp label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 1em;
+  font-weight: bold;
+  line-height: 3;
+  cursor: pointer;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 18px;
+}
+/* line 177, ../../sass/partials/filter.scss */
+.accordion .tab-opp label.NFC {
+  background-color: rgba(89, 171, 227, 0.8);
+}
+/* line 180, ../../sass/partials/filter.scss */
+.accordion .tab-opp label.AFC {
+  background-color: rgba(195, 39, 43, 0.8);
+}
+/* line 184, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp {
+  max-height: 0;
+  overflow: hidden;
+  background: #ccc;
+  transition: all 400ms ease-out;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+/* line 194, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp span {
+  width: 100%;
+}
+/* line 197, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+/* line 202, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 1em;
+  font-weight: bold;
+  line-height: 3;
+  cursor: pointer;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 18px;
+  background-color: #999;
+}
+/* line 216, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner {
+  max-height: 0;
+  overflow: hidden;
+  background: #ccc;
+  transition: all 400ms ease-out;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+/* line 226, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team {
+  width: 50%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #ababab;
+  opacity: 0.4;
+  cursor: pointer;
+}
+/* line 237, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team:hover {
+  opacity: 1;
+}
+/* line 240, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.selected {
+  opacity: 1;
+}
+/* line 243, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.CHI {
+  color: #DD4814;
+  background-color: #03202F;
+}
+/* line 247, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.DET {
+  color: #C5C7CF;
+  background-color: #006DB0;
+}
+/* line 251, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.GB {
+  color: #FFB612;
+  background-color: #203731;
+}
+/* line 255, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.MIN {
+  color: #F0BF00;
+  background-color: #582C81;
+}
+/* line 260, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.ATL {
+  color: #A6192D;
+  background-color: #000;
+}
+/* line 264, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.CAR {
+  color: #101820;
+  background-color: #0085CA;
+}
+/* line 268, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.NO {
+  color: #000;
+  background-color: #D2B887;
+}
+/* line 272, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.TB {
+  color: #89765F;
+  background-color: #D60A0B;
+}
+/* line 277, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.DAL {
+  color: #87909B;
+  background-color: #0D254C;
+}
+/* line 281, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.NYG {
+  color: #FFF;
+  background-color: #192F6B;
+}
+/* line 285, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.PHI {
+  color: #C0C0C0;
+  background-color: #003B48;
+}
+/* line 289, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.WAS {
+  color: #FFB612;
+  background-color: #773141;
+}
+/* line 294, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.ARI {
+  color: #FFF;
+  background-color: #9B2743;
+}
+/* line 298, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.LAR {
+  color: #13264B;
+  background-color: #C9AF74;
+}
+/* line 302, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.SEA {
+  color: #4DFF00;
+  background-color: #001433;
+}
+/* line 306, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.SF {
+  color: #AF1E2C;
+  background-color: #E6BE8A;
+}
+/* line 311, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.BAL {
+  color: #D0B240;
+  background-color: #280353;
+}
+/* line 315, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.CIN {
+  color: #000;
+  background-color: #FB4F14;
+}
+/* line 319, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.CLE {
+  color: #301f10;
+  background-color: #eb3300;
+}
+/* line 323, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.PIT {
+  color: #FFB81C;
+  background-color: #101820;
+}
+/* line 328, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.HOU {
+  color: #02253A;
+  background-color: #B31B34;
+}
+/* line 332, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.IND {
+  color: #FFF;
+  background-color: #003B7B;
+}
+/* line 336, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.JAX {
+  color: #006778;
+  background-color: #000;
+}
+/* line 340, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.TEN {
+  color: #0D254C;
+  background-color: #648FCC;
+}
+/* line 345, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.BUF {
+  color: #C60C30;
+  background-color: #00338D;
+}
+/* line 349, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.MIA {
+  color: #F5811F;
+  background-color: #008D97;
+}
+/* line 353, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.NE {
+  color: #0C2340;
+  background-color: #C8102E;
+}
+/* line 357, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.NYJ {
+  color: #FFF;
+  background-color: #0C371D;
+}
+/* line 362, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.DEN {
+  color: #002244;
+  background-color: #FB4F14;
+}
+/* line 366, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.KC {
+  color: #F2C800;
+  background-color: #B20032;
+}
+/* line 370, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.LAC {
+  color: #FFB81C;
+  background-color: #0072CE;
+}
+/* line 374, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp .tab-content-opp-inner .team.OAK {
+  color: #C4C8CB;
+  background-color: #000;
+}
+/* line 380, ../../sass/partials/filter.scss */
+.accordion .tab-opp .tab-content-opp input:checked ~ .tab-content-opp-inner {
+  max-height: 600px;
+}
