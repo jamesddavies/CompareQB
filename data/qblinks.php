@@ -36,8 +36,8 @@
 		"ryan nassib" => "http://www.pro-football-reference.com/players/N/NassRy00/gamelog/",
 		"dan orlovsky" => "http://www.pro-football-reference.com/players/O/OrloDa00/gamelog/",
 		"joe webb" => "http://www.pro-football-reference.com/players/W/WebbJo00/gamelog/",
-		"josh johnson" => "http://www.pro-football-reference.com/players/J/JohnJo05/gamelog/",
-		"jacoby brissett" => "http://www.pro-football-reference.com/players/B/BrisJa00/gamelog/",
+		"josh johnson" => "http://www.pro-football-reference.com/players/J/JohnJo05/gamelog/",*/
+		"jacoby brissett" => "http://www.pro-football-reference.com/players/B/BrisJa00/gamelog/"/*,
 		"mark sanchez" => "http://www.pro-football-reference.com/players/S/SancMa00/gamelog/",
 		"zach mettenberger" => "http://www.pro-football-reference.com/players/M/MettZa00/gamelog/",
 		"cardale jones" => "http://www.pro-football-reference.com/players/J/JoneCa01/gamelog/",
@@ -55,8 +55,8 @@
 		"sam bradford" => "http://www.pro-football-reference.com/players/B/BradSa00/gamelog/",
 		"sean mannion" => "http://www.pro-football-reference.com/players/M/MannSe00/gamelog/",
 		"jay cutler" => "http://www.pro-football-reference.com/players/C/CutlJa00/gamelog/",
-		"philip rivers" => "http://www.pro-football-reference.com/players/R/RivePh00/gamelog/",*/
-		"marcus mariota" => "http://www.pro-football-reference.com/players/M/MariMa01/gamelog/"/*,
+		"philip rivers" => "http://www.pro-football-reference.com/players/R/RivePh00/gamelog/",
+		"marcus mariota" => "http://www.pro-football-reference.com/players/M/MariMa01/gamelog/",
 		"cam newton" => "http://www.pro-football-reference.com/players/N/NewtCa00/gamelog/",
 		"colt mccoy" => "http://www.pro-football-reference.com/players/M/McCoCo00/gamelog/",
 		"derek carr" => "http://www.pro-football-reference.com/players/C/CarrDe02/gamelog/",
