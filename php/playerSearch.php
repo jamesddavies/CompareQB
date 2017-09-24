@@ -1,8 +1,16 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 require('config.php');
 
-$search = strtolower($_GET['search']);
+	if (isset($_GET['search'])){
+		$search = strtolower($_GET['search']);
+	}
+	if (isset($_GET['searchid'])){
+		$searchid = $_GET['searchid'];
+	}
 
 	try {
 		$db = new PDO($dsn,$dbuser,$dbpass,$opt);
@@ -10,10 +18,18 @@ $search = strtolower($_GET['search']);
 		echo "Error connecting to database: " . $e->getMessage();
 	}
 
-	$query = $db->prepare("SELECT * FROM playerdata WHERE full_name LIKE :name");
-	$query->execute([
-	    "name" => "%" . $search . "%"
-	]);
+	if (isset($search)){
+		$query = $db->prepare("SELECT * FROM playerdata WHERE full_name LIKE :name");
+		$query->execute([
+		    "name" => "%" . $search . "%"
+		]);
+	} 
+	if (isset($searchid)){
+		$query = $db->prepare("SELECT * FROM playerdata WHERE id = :searchid");
+		$query->execute([
+		    "searchid" => $searchid
+		]);
+	}
 
 	$count = 0;
 
@@ -37,10 +53,15 @@ $search = strtolower($_GET['search']);
 			$height = number_format($ht, 1, "' ", "");
 			$weight = $row['weight'];
 			$years = intval(date("Y")) - intval($row['drafted_year']);
-			if ($years < 2){
+			if ($years < 1){
 				$exp = "Rookie";
+			} else if ($years == 1){
+				$exp = $years . " season";
 			} else {
-				$exp = "" . $years . " seasons";
+				$exp = $years . " seasons";
+			}
+			if ($row['retired'] != 0){
+				$exp = (intval($row['retired']) - intval($row['drafted_year']) + 1) . " seasons";
 			}
 			$drafted_year = $row['drafted_year'];
 			$drafted_info = $row['drafted_info'];
@@ -61,8 +82,10 @@ $search = strtolower($_GET['search']);
 		$firstname = "AJ";
 	}
 
-	if ($count == 0){
+	if ($count == 0 && isset($search)){
 		$message = "There doesn't seem to be an active player with the name '" . $search . "' - please try again.";
+	} else if ($count == 0 && isset($search)){
+		$message = "There doesn't seem to be an active player with the id '" . $searchid . "' - please try again.";
 	}
 
 	//Set colours
@@ -341,6 +364,12 @@ $db = null;
 					$gamesstarted++;
 				}
 
+				//Count games played
+
+				if ($row['att'] > 0){
+					$gamesplayed++;
+				}
+
 				//Get number of games by yards
 
 				if ($row['yds'] >= 300){
@@ -358,6 +387,13 @@ $db = null;
 				if ($row['year'] != in_array($row['year'], $years)){
 					$years[] = $row['year'];
 					sort($years, SORT_NATURAL);
+					//Check for/fill in empty years
+					for ($j = 1; $j < count($years); $j++){
+						if (($years[$j] - $years[$j-1]) != 1){
+							$extraYear = $years[$j-1] + 1;
+							array_splice($years,$j,0,$extraYear);
+						}
+					}
 				}
 
 				//Declare variables for stat in each year
@@ -410,6 +446,19 @@ $db = null;
 
 		}
 
+	//Passer rating formula
+
+	$rateVar1 = (($passcmp/$passatt) - 0.3) / 0.2;
+	$rateVar2 = (($passyds/$passatt) - 3) / 4;
+	$rateVar3 = ($passtd/$passatt) / 0.05;
+	$rateVar4 = (0.095 - ($passint/$passatt)) / 0.04;
+
+	$rateVar = $rateVar1 + $rateVar2 + $rateVar3 + $rateVar4;
+
+	$passrating = ($rateVar * 100) / 6;
+
+	$passrating = number_format((float)$passrating, 1, ".", "");
+
 	//Formatting
 
 	if ($count != 0){ 
@@ -421,14 +470,9 @@ $db = null;
 		$passyds = substr_replace($passyds,",",2,0);
 	}
 
-	$passrating = $rate / $count;
-	$passrating = number_format((float)$passrating, 1, ".", "");
-
 	$seasons = count($years);
 
-	$gamesplayed = $count;
-
-	$missedgames = ($seasons * 16) - $gamesplayed;
+	$missedgames = ($seasons * 16) - $count;
 
 	$missedperc = $missedgames/($seasons * 16) * 100;
 	$missedperc = number_format((float)$missedperc, 2, ".", "");

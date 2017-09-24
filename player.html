@@ -1,47 +1,47 @@
 <style>
-
-	.header-container {
-		color: {{ textColor }};
-	}
-
-	nav li a:hover {
-		color: {{ colorMain }};
-	}
-
-	.player-stats #stat-container .chart-btn.active {
-		border-top: 2px solid {{ colorMain }};
-		border-bottom: 2px solid {{ colorSecondary }};
-		background-color: #EEE;
-	}
-
-	.filter .filters .buttons .category.active {
-		background-color: {{ colorMain }};
-	}
-
-	.filter .filters .buttons .category.active h5 {
-		color: {{ textColor }};
-	}
-
-	.filter .filters .filter-select {
-		background-color: {{ colorMain }};
-		color: {{ textColor }};
-	}
-
-	.filter .filters .filter-select .container .row {
-		border-bottom: 2px solid {{ textColor }};
-	}
-
-    .filter .filters .accordion .tab label {
-        background-color: {{ colorMain }};
-    }
-
-    .accordion .tab .tab-content .game.selected {
-        background-color: {{ colorMain }};
-        color: {{ textColor }};
-        opacity: 1;
-    }
-
-</style>
+    
+        .header-container {
+            color: {{ textColor }};
+        }
+    
+        nav li a:hover {
+            color: {{ colorMain }};
+        }
+    
+        .player-stats #stat-container .chart-btn.active {
+            border-top: 2px solid {{ colorMain }};
+            border-bottom: 2px solid {{ colorSecondary }};
+            background-color: #EEE;
+        }
+    
+        .filter .filters .buttons .category.active {
+            background-color: {{ colorMain }};
+        }
+    
+        .filter .filters .buttons .category.active h5 {
+            color: {{ textColor }};
+        }
+    
+        .filter .filters .filter-select {
+            background-color: {{ colorMain }};
+            color: {{ textColor }};
+        }
+    
+        .filter .filters .filter-select .container .row {
+            border-bottom: 2px solid {{ textColor }};
+        }
+    
+        .filter .filters .accordion .tab label {
+            background-color: {{ colorMain }};
+        }
+    
+        .accordion .tab .tab-content .game.selected {
+            background-color: {{ colorMain }};
+            color: {{ textColor }};
+            opacity: 1;
+        }
+    
+    </style>
 
 <svg viewBox="0 0 300 340" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <defs>
@@ -112,9 +112,9 @@
                     <div class="slide">
                         <div class="header">
                             <span class="slider-prev">&#8249;</span>
-                                <div class="title">
-                                    SORT BY GAME
-                                </div>
+                            <div class="title">
+                                SORT BY GAME
+                            </div>
                             <span class="slider-next">&#8250;</span>
                         </div>
                         <div class="buttons">
@@ -126,7 +126,8 @@
                                 <input ng-attr-id="{{ year }}" type="checkbox" name="tabs">
                                 <label ng-attr-for="{{year}}"><p>{{year}} &#9660;</p><p class="select-all-year" ng-click="addYear(year)">Select All</p></label>
                                 <div class="tab-content">
-                                    <div class="game" ng-repeat="game in stats.games" ng-if="game.year == year" ng-attr-data-value="{{year}}-{{game.week}}" ng-click="addGame(game.year + '-' + game.week)" ng-class="(gameReq.includes(game.year + '-' + game.week)) ? 'selected' : ''">
+                                    <div class="game" ng-repeat="game in stats.games" ng-if="game.year == year" ng-attr-data-value="{{year}}-{{game.week}}" ng-click="addGame(game.year + '-' + game.week)"
+                                        ng-class="(gameReq.includes(game.year + '-' + game.week)) ? 'selected' : ''">
                                         Game {{game.week}} - {{game.opp}}
                                     </div>
                                 </div>
@@ -136,9 +137,9 @@
                     <div class="slide">
                         <div class="header">
                             <span class="slider-prev">&#8249;</span>
-                                <div class="title">
-                                    SORT BY OPPOSITION
-                                </div>
+                            <div class="title">
+                                SORT BY OPPOSITION
+                            </div>
                             <span class="slider-next">&#8250;</span>
                         </div>
                         <div class="buttons">
@@ -278,7 +279,7 @@
                         <button class="chart-btn" data-func="ints">INTs</button>
                         <button class="chart-btn" data-func="compperc">Comp %</button>
                         <button class="chart-btn" data-func="tdperc">TD %</button>
-                        <button class="chart-btn" data-func="competions">Completions</button>
+                        <button class="chart-btn" data-func="completions">Completions</button>
                         <button class="chart-btn" data-func="attempts">Pass Attempts</button>
                         <button class="chart-btn" data-func="yardsatt">Y/A</button>
                         <button class="chart-btn" data-func="sacks">Sacks</button>
