@@ -1,0 +1,55 @@
+$fontstack: "Noto Sans", sans-serif;
+
+nav {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 58px;
+	font-family: $fontstack;
+	text-align: center;
+	background-color: #FDFDFD;
+	border-top: 1px solid #CCC;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	z-index: 1000;
+	ul {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		list-style-type: none;
+		text-align: center;
+		li {
+			text-align: center;
+			font-size: 0.8rem;
+			padding: 0 40px;
+			font-weight: bold;
+			&:first-child {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			&:last-child {
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+			a {
+				color: #222;
+				text-decoration: none;
+				transition: all 150ms ease-out;
+				opacity: 0.6;
+				cursor: pointer;
+				&:hover {
+					opacity: 1;
+				}
+			}
+			img {
+				width: 40px;
+			}
+		}
+	}
+}

@@ -260,6 +260,7 @@ playerApp.controller("Compare", function(
   $scope.purple = "rgba(93, 63, 106, 0.6)";
 
   $scope.chartStat = "yards";
+  $scope.compareYearCareer = "career";
 
   function StartObject() {
     this.name = "";
@@ -304,11 +305,13 @@ playerApp.controller("Compare", function(
       console.log($scope.totalYears);
 
       $timeout(function() {
-        charts.updateCareerCompareChart(
-          $scope.players,
-          $scope.chartStat,
-          $scope.totalYears
-        );
+        if ($scope.compareYearCareer == "career"){
+          charts.updateCareerCompareChart(
+            $scope.players,
+            $scope.chartStat,
+            $scope.totalYears
+          );
+        }
       });
     });
 
@@ -343,20 +346,24 @@ playerApp.controller("Compare", function(
 
     $scope.calculateTotalYears();
 
-    charts.updateCareerCompareChart(
-      $scope.players,
-      $scope.chartStat,
-      $scope.totalYears
-    );
+    if ($scope.compareYearCareer == "career"){
+      charts.updateCareerCompareChart(
+        $scope.players,
+        $scope.chartStat,
+        $scope.totalYears
+      );
+    }
   };
 
   $scope.changeCareerStat = function() {
     $scope.calculateTotalYears();
-    charts.updateCareerCompareChart(
-      $scope.players,
-      $scope.chartStat,
-      $scope.totalYears
-    );
+    if ($scope.compareYearCareer == "career"){
+      charts.updateCareerCompareChart(
+        $scope.players,
+        $scope.chartStat,
+        $scope.totalYears
+      );
+    }
   };
 
   $scope.calculateTotalYears = function() {
@@ -383,6 +390,19 @@ playerApp.controller("Compare", function(
 
     $scope.totalYears = array;
   };
+
+  $scope.showComp = function(){
+    console.log("Compare: " + $scope.compareYearCareer);
+    $timeout(function(){
+    if ($scope.compareYearCareer == "career"){
+      charts.updateCareerCompareChart(
+        $scope.players,
+        $scope.chartStat,
+        $scope.totalYears
+      );
+    }
+    });
+  }
 });
 
 playerApp.service("charts", function() {

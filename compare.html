@@ -20,6 +20,17 @@
 </div>
 </div>
 
+<form class="year-career-controls">
+	<input type="radio" id="year-compare" value="year" ng-model="compareYearCareer" ng-change="showComp()">
+	<label for="year-compare" title="Compare By Year">
+		Compare By Year
+	</label>
+	<input type="radio" id="career-compare" value="career" ng-model="compareYearCareer" ng-change="showComp()">
+	<label for="career-compare" title="Compare By Career">
+		Compare By Career
+	</label>
+</form>
+
 <div class="chart-size-controls">
 	<div class="chart-size-up" title="Increase Chart Size">
 		+
@@ -50,25 +61,25 @@
 </select>
 </div>
 
-<canvas ng-if="totalYears.length > 0" id="careerCompare" width="600"></div>
-
+<canvas ng-if="totalYears.length > 0 && compareYearCareer == 'career'" id="careerCompare" width="600"></canvas>
+<canvas ng-if="totalYears.length > 0 && compareYearCareer == 'year'" id="yearCompare" width="600"></canvas>
 
 <script>
 
 $(".chart-size-up").click(function(){
-	if ($('#careerCompare').width() < (window.innerWidth - 100)){
+	if ($('canvas').width() < (window.innerWidth - 100)){
 		console.log("click");
-		var width = $('#careerCompare').width();
-		var height = $('#careerCompare').height();
-		$('#careerCompare').css({"max-width": "" + (width+100) + "px", "width": "" + (width+100) + "px", "height": "" + (height+50) + "px"});
+		var width = $('canvas').width();
+		var height = $('canvas').height();
+		$('canvas').css({"max-width": "" + (width+100) + "px", "width": "" + (width+100) + "px", "height": "" + (height+50) + "px"});
 	}
 })
 
 $(".chart-size-down").click(function(){
-	if ($('#careerCompare').width() > 500){
-		var width = $('#careerCompare').width();
-		var height = $('#careerCompare').height();
-		$('#careerCompare').css({"max-width": "" + (width-100) + "px", "height": "" + (height-50) + "px"});
+	if ($('canvas').width() > 500){
+		var width = $('canvas').width();
+		var height = $('canvas').height();
+		$('canvas').css({"max-width": "" + (width-100) + "px", "height": "" + (height-50) + "px"});
 	}
 })
 

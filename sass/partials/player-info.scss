@@ -1,0 +1,24 @@
+$fontstack: "Noto Sans", sans-serif;
+
+.player-info {
+	margin-top: -80px;
+	width: 100%;
+	font-family: $fontstack;
+	color: #222;
+	h3 {
+		font-size: 1.2rem;
+		font-weight: bold;
+		margin-left: 16px;
+	}
+	.container {
+		p {
+			font-size: 1rem;
+			line-height: 1.6;
+			display: inline-block;
+			text-align: center;
+		}
+		.drafted {
+			text-align: left;
+		}
+	}
+}

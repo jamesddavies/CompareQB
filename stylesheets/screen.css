@@ -1,4 +1,4 @@
-/* line 5, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,45 +20,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -75,7 +75,7 @@ body {
   outline: none;
 }
 
-/* line 1, ../sass/partials/player-header.scss */
+/* line 3, ../sass/partials/player-header.scss */
 .header-container {
   position: absolute;
   top: 0;
@@ -83,7 +83,7 @@ body {
   width: 100%;
   font-family: "Noto Sans", sans-serif;
 }
-/* line 7, ../sass/partials/player-header.scss */
+/* line 9, ../sass/partials/player-header.scss */
 .header-container img {
   width: 46%;
   position: absolute;
@@ -92,12 +92,12 @@ body {
   max-width: 200px;
   z-index: 1;
 }
-/* line 15, ../sass/partials/player-header.scss */
+/* line 17, ../sass/partials/player-header.scss */
 .header-container .first-name {
   margin: 50px 10px 5px 18px;
   font-size: 1.4rem;
 }
-/* line 19, ../sass/partials/player-header.scss */
+/* line 21, ../sass/partials/player-header.scss */
 .header-container .surname {
   margin: 0 10px 10px 16px;
   font-size: 2rem;
@@ -106,44 +106,44 @@ body {
   z-index: 2;
   display: inline;
 }
-/* line 27, ../sass/partials/player-header.scss */
+/* line 29, ../sass/partials/player-header.scss */
 .header-container .team {
   margin: 40px 10px 5px 18px;
   font-size: 1.1rem;
 }
-/* line 31, ../sass/partials/player-header.scss */
+/* line 33, ../sass/partials/player-header.scss */
 .header-container .number {
   margin: 10px 10px 5px 18px;
   font-size: 1.1rem;
 }
-/* line 35, ../sass/partials/player-header.scss */
+/* line 37, ../sass/partials/player-header.scss */
 .header-container .error-message {
   text-align: center;
   padding: 20px;
   font-size: 1.2rem;
 }
 
-/* line 1, ../sass/partials/player-info.scss */
+/* line 3, ../sass/partials/player-info.scss */
 .player-info {
   margin-top: -80px;
   width: 100%;
   font-family: "Noto Sans", sans-serif;
   color: #222;
 }
-/* line 6, ../sass/partials/player-info.scss */
+/* line 8, ../sass/partials/player-info.scss */
 .player-info h3 {
   font-size: 1.2rem;
   font-weight: bold;
   margin-left: 16px;
 }
-/* line 12, ../sass/partials/player-info.scss */
+/* line 14, ../sass/partials/player-info.scss */
 .player-info .container p {
   font-size: 1rem;
   line-height: 1.6;
   display: inline-block;
   text-align: center;
 }
-/* line 18, ../sass/partials/player-info.scss */
+/* line 20, ../sass/partials/player-info.scss */
 .player-info .container .drafted {
   text-align: left;
 }
@@ -897,8 +897,6 @@ nav ul li img {
   font-size: 14px;
   color: #333;
   padding: 20px;
-  text-align: center;
-  line-height: 1.4;
 }
 
 /* line 3, ../sass/partials/search-overlay.scss */
@@ -1081,7 +1079,7 @@ nav ul li img {
 }
 
 /* line 103, ../sass/partials/compare.scss */
-#careerCompare {
+#careerCompare, #yearCompare {
   width: 90%;
   max-width: 1000px;
   margin: 20px auto 80px auto;
@@ -1118,6 +1116,56 @@ nav ul li img {
 }
 
 /* line 136, ../sass/partials/compare.scss */
+.year-career-controls {
+  width: 320px;
+  margin-top: 20px;
+  margin-right: 5px;
+  float: right;
+  display: flex;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+/* line 147, ../sass/partials/compare.scss */
+.year-career-controls #year-compare {
+  position: absolute;
+  left: 10px;
+  opacity: 0;
+}
+/* line 152, ../sass/partials/compare.scss */
+.year-career-controls #career-compare {
+  position: absolute;
+  right: 10px;
+  opacity: 0;
+}
+/* line 157, ../sass/partials/compare.scss */
+.year-career-controls input[type=radio]:checked + label {
+  background-color: #0FC4DB;
+  color: #fdfdfd;
+}
+/* line 161, ../sass/partials/compare.scss */
+.year-career-controls label {
+  width: 160px;
+  height: 30px;
+  background-color: #BBB;
+  color: #333;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: all 160ms ease-out;
+}
+/* line 174, ../sass/partials/compare.scss */
+.year-career-controls label:hover {
+  background-color: #999;
+}
+
+/* line 180, ../sass/partials/compare.scss */
 .career-compare-heading {
   font-family: "Noto Sans", sans-serif;
   text-align: center;
@@ -1126,7 +1174,7 @@ nav ul li img {
   color: #999;
 }
 
-/* line 144, ../sass/partials/compare.scss */
+/* line 188, ../sass/partials/compare.scss */
 .compare-controls {
   width: 100%;
   min-height: 80px;
@@ -1135,7 +1183,7 @@ nav ul li img {
   justify-content: center;
   flex-direction: row;
 }
-/* line 151, ../sass/partials/compare.scss */
+/* line 195, ../sass/partials/compare.scss */
 .compare-controls .career-compare-select {
   font-family: "Noto Sans", sans-serif;
   font-size: 14px;
@@ -1143,7 +1191,7 @@ nav ul li img {
   max-width: 240px;
   display: none;
 }
-/* line 157, ../sass/partials/compare.scss */
+/* line 201, ../sass/partials/compare.scss */
 .compare-controls .career-compare-select.show {
   display: block;
 }

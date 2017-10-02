@@ -1,0 +1,24 @@
+/* line 3, ../../sass/partials/player-info.scss */
+.player-info {
+  margin-top: -80px;
+  width: 100%;
+  font-family: "Noto Sans", sans-serif;
+  color: #222;
+}
+/* line 8, ../../sass/partials/player-info.scss */
+.player-info h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 16px;
+}
+/* line 14, ../../sass/partials/player-info.scss */
+.player-info .container p {
+  font-size: 1rem;
+  line-height: 1.6;
+  display: inline-block;
+  text-align: center;
+}
+/* line 20, ../../sass/partials/player-info.scss */
+.player-info .container .drafted {
+  text-align: left;
+}

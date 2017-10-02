@@ -1,0 +1,42 @@
+$fontstack: "Noto Sans", sans-serif;
+
+.header-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	font-family: $fontstack;
+	img {
+		width: 46%;
+		position: absolute;
+		top: 25px;
+		right: 15px;
+		max-width: 200px;
+		z-index: 1;
+	}
+	.first-name {
+		margin: 50px 10px 5px 18px;
+		font-size: 1.4rem;
+	}
+	.surname {
+		margin: 0 10px 10px 16px;
+		font-size: 2rem;
+		font-weight: bold;
+		position: relative;
+		z-index: 2;
+		display: inline;
+	}
+	.team {
+		margin: 40px 10px 5px 18px;
+		font-size: 1.1rem;
+	}
+	.number {
+		margin: 10px 10px 5px 18px;
+		font-size: 1.1rem;
+	}
+	.error-message {
+		text-align: center;
+		padding: 20px;
+		font-size: 1.2rem;
+	}
+}
