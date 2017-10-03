@@ -550,11 +550,22 @@ $db = null;
 
 	while ($row = $queryAll->fetch()) {
 
-		//Array of games played - year, week, opposition
+		//Array of games played - all stats
 			$games[] = [
 				"year" => $row['year'],
 				"week" => $row['week'],
 				"opp" => $row['opp'],
+				"yards" => $row['yds'],
+				"tds" => $row['td'],
+				"completions" => $row['cmp'],
+				"attempts" => $row['att'],
+				"ints" => $row['int'],
+				"rate" => $row['rate'],
+				"yardsatt" => $row['y/a'],
+				"ay/a" => $row['ay/a'],
+				"sacks" => $row['sk'],
+				"sackyards" => $row['skyds'],
+				"location" => $row['@']
 			];
 
 		//Get array of all years in league

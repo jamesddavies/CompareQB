@@ -1084,9 +1084,19 @@ nav ul li img {
   max-width: 1000px;
   margin: 20px auto 80px auto;
   transition: all 180ms ease-out;
+  position: absolute;
+  top: -1000px;
+  opacity: 0;
+  z-index: -1;
+}
+/* line 112, ../sass/partials/compare.scss */
+#careerCompare.show, #yearCompare.show {
+  position: static;
+  opacity: 1;
+  z-index: 1;
 }
 
-/* line 110, ../sass/partials/compare.scss */
+/* line 119, ../sass/partials/compare.scss */
 .chart-size-controls {
   width: 100px;
   margin-top: 20px;
@@ -1095,7 +1105,7 @@ nav ul li img {
   align-items: center;
   justify-content: space-around;
 }
-/* line 117, ../sass/partials/compare.scss */
+/* line 126, ../sass/partials/compare.scss */
 .chart-size-controls .chart-size-up, .chart-size-controls .chart-size-down {
   width: 30px;
   height: 30px;
@@ -1110,12 +1120,12 @@ nav ul li img {
   cursor: pointer;
   transition: all 160ms ease-out;
 }
-/* line 130, ../sass/partials/compare.scss */
+/* line 139, ../sass/partials/compare.scss */
 .chart-size-controls .chart-size-up:hover, .chart-size-controls .chart-size-down:hover {
   background-color: #999;
 }
 
-/* line 136, ../sass/partials/compare.scss */
+/* line 145, ../sass/partials/compare.scss */
 .year-career-controls {
   width: 320px;
   margin-top: 20px;
@@ -1128,24 +1138,24 @@ nav ul li img {
   justify-content: center;
   position: relative;
 }
-/* line 147, ../sass/partials/compare.scss */
+/* line 156, ../sass/partials/compare.scss */
 .year-career-controls #year-compare {
   position: absolute;
   left: 10px;
   opacity: 0;
 }
-/* line 152, ../sass/partials/compare.scss */
+/* line 161, ../sass/partials/compare.scss */
 .year-career-controls #career-compare {
   position: absolute;
   right: 10px;
   opacity: 0;
 }
-/* line 157, ../sass/partials/compare.scss */
+/* line 166, ../sass/partials/compare.scss */
 .year-career-controls input[type=radio]:checked + label {
   background-color: #0FC4DB;
   color: #fdfdfd;
 }
-/* line 161, ../sass/partials/compare.scss */
+/* line 170, ../sass/partials/compare.scss */
 .year-career-controls label {
   width: 160px;
   height: 30px;
@@ -1160,12 +1170,12 @@ nav ul li img {
   cursor: pointer;
   transition: all 160ms ease-out;
 }
-/* line 174, ../sass/partials/compare.scss */
+/* line 183, ../sass/partials/compare.scss */
 .year-career-controls label:hover {
   background-color: #999;
 }
 
-/* line 180, ../sass/partials/compare.scss */
+/* line 189, ../sass/partials/compare.scss */
 .career-compare-heading {
   font-family: "Noto Sans", sans-serif;
   text-align: center;
@@ -1174,7 +1184,7 @@ nav ul li img {
   color: #999;
 }
 
-/* line 188, ../sass/partials/compare.scss */
+/* line 197, ../sass/partials/compare.scss */
 .compare-controls {
   width: 100%;
   min-height: 80px;
@@ -1183,7 +1193,7 @@ nav ul li img {
   justify-content: center;
   flex-direction: row;
 }
-/* line 195, ../sass/partials/compare.scss */
+/* line 204, ../sass/partials/compare.scss */
 .compare-controls .career-compare-select {
   font-family: "Noto Sans", sans-serif;
   font-size: 14px;
@@ -1191,9 +1201,29 @@ nav ul li img {
   max-width: 240px;
   display: none;
 }
-/* line 201, ../sass/partials/compare.scss */
+/* line 210, ../sass/partials/compare.scss */
 .compare-controls .career-compare-select.show {
   display: block;
+}
+
+/* line 216, ../sass/partials/compare.scss */
+.year-compare-controls {
+  width: 90%;
+  margin: 0 auto;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+/* line 225, ../sass/partials/compare.scss */
+.year-compare-controls select {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  width: 80%;
+  max-width: 200px;
+  margin: 10px;
 }
 
 @media (min-width: 640px) {

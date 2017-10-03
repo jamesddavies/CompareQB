@@ -21,11 +21,11 @@
 </div>
 
 <form class="year-career-controls">
-	<input type="radio" id="year-compare" value="year" ng-model="compareYearCareer" ng-change="showComp()">
+	<input type="radio" id="year-compare" value="year" ng-model="compareYearCareer" ng-change="updateYearCareer()">
 	<label for="year-compare" title="Compare By Year">
 		Compare By Year
 	</label>
-	<input type="radio" id="career-compare" value="career" ng-model="compareYearCareer" ng-change="showComp()">
+	<input type="radio" id="career-compare" value="career" ng-model="compareYearCareer" ng-change="updateYearCareer()">
 	<label for="career-compare" title="Compare By Career">
 		Compare By Career
 	</label>
@@ -57,12 +57,19 @@
 	<option value="sacks">Sacks</option>
 	<option value="sackyards">Sack Yards</option>
 	<option value="yardspersack">Yards Per Sack</option>
-	<option value="starts">Games Started</option>
+	<option ng-if="compareYearCareer == 'career'" value="starts">Games Started</option>
 </select>
 </div>
 
-<canvas ng-if="totalYears.length > 0 && compareYearCareer == 'career'" id="careerCompare" width="600"></canvas>
-<canvas ng-if="totalYears.length > 0 && compareYearCareer == 'year'" id="yearCompare" width="600"></canvas>
+<div class="year-compare-controls" ng-if="compareYearCareer == 'year'">
+	<select ng-repeat="player in players" ng-if="player.stats " ng-model="playerYears[player.info.surname]" ng-change="changePlayerYear()">
+		<option value="">{{player.info.surname}}</option>
+		<option ng-repeat="year in player.stats.allYears" ng-value="{{year}}" ng-selected="$index == 0">{{year}}</option>
+	</select>
+</div>
+
+<canvas ng-if="totalYears.length > 0" ng-class="(compareYearCareer == 'career') ? 'show' : ''" id="careerCompare" width="600"></canvas>
+<canvas ng-if="totalYears.length > 0" ng-class="(compareYearCareer == 'year') ? 'show' : ''" id="yearCompare" width="600"></canvas>
 
 <script>
 

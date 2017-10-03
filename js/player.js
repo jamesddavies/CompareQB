@@ -259,8 +259,10 @@ playerApp.controller("Compare", function(
   $scope.green = "rgba(38, 166, 91, 0.6)";
   $scope.purple = "rgba(93, 63, 106, 0.6)";
 
+  //Initialising ng-model variables
   $scope.chartStat = "yards";
   $scope.compareYearCareer = "career";
+  $scope.playerYears = {};
 
   function StartObject() {
     this.name = "";
@@ -293,16 +295,17 @@ playerApp.controller("Compare", function(
         "Content-Type": "application/json"
       }
     };
+    
     $http(request).then(function(player) {
       if (n == "1") $scope.players.player1 = player.data;
       if (n == "2") $scope.players.player2 = player.data;
       if (n == "3") $scope.players.player3 = player.data;
       if (n == "4") $scope.players.player4 = player.data;
-      console.log($scope.players);
 
+      console.log($scope.players);
       $scope.calculateTotalYears();
 
-      console.log($scope.totalYears);
+      $scope.playerYears[player.data.info.surname] = player.data.stats.allYears[0];
 
       $timeout(function() {
         if ($scope.compareYearCareer == "career"){
@@ -310,6 +313,12 @@ playerApp.controller("Compare", function(
             $scope.players,
             $scope.chartStat,
             $scope.totalYears
+          );
+        } else if ($scope.compareYearCareer == "year"){
+          charts.updateYearCompareChart(
+            $scope.players,
+            $scope.chartStat,
+            $scope.playerYears
           );
         }
       });
@@ -346,11 +355,19 @@ playerApp.controller("Compare", function(
 
     $scope.calculateTotalYears();
 
+    $scope.playerYears[n] = "";
+
     if ($scope.compareYearCareer == "career"){
       charts.updateCareerCompareChart(
         $scope.players,
         $scope.chartStat,
         $scope.totalYears
+      );
+    } else if ($scope.compareYearCareer == "year"){
+      charts.updateYearCompareChart(
+        $scope.players,
+        $scope.chartStat,
+        $scope.playerYears
       );
     }
   };
@@ -362,6 +379,12 @@ playerApp.controller("Compare", function(
         $scope.players,
         $scope.chartStat,
         $scope.totalYears
+      );
+    } else if ($scope.compareYearCareer == "year"){
+      charts.updateYearCompareChart(
+        $scope.players,
+        $scope.chartStat,
+        $scope.playerYears
       );
     }
   };
@@ -391,17 +414,30 @@ playerApp.controller("Compare", function(
     $scope.totalYears = array;
   };
 
-  $scope.showComp = function(){
-    console.log("Compare: " + $scope.compareYearCareer);
+  $scope.updateYearCareer = function(){
     $timeout(function(){
-    if ($scope.compareYearCareer == "career"){
-      charts.updateCareerCompareChart(
-        $scope.players,
-        $scope.chartStat,
-        $scope.totalYears
-      );
-    }
+      if ($scope.compareYearCareer == "career"){
+        charts.updateCareerCompareChart(
+          $scope.players,
+          $scope.chartStat,
+          $scope.totalYears
+        );
+      } else if ($scope.compareYearCareer == "year"){
+        charts.updateYearCompareChart(
+          $scope.players,
+          $scope.chartStat,
+          $scope.playerYears
+        );
+      }
     });
+  }
+
+  $scope.changePlayerYear = function(){
+    charts.updateYearCompareChart(
+      $scope.players,
+      $scope.chartStat,
+      $scope.playerYears
+    );
   }
 });
 
@@ -495,12 +531,106 @@ playerApp.service("charts", function() {
     this.careerCompare(dataset);
   };
 
+  //Year compare chart data
+
+  this.updateYearCompareChart = function(players,stat,playerYears){
+    if (typeof yearCompareChart != "undefined") {
+      yearCompareChart.destroy();
+    }
+
+    var dataCollection = [];
+    var weekArray = [];
+    var totalGames = 16;
+
+    //Create label array
+    for (var i = 0; i < totalGames; i++){
+      weekArray.push("Game " + (i + 1));
+    }
+
+    //Create year array + data for each player
+
+    angular.forEach(players, function(player,index){
+      if (player.hasOwnProperty("stats")){
+        var year = playerYears[player.info.surname];
+        var gameArr = player.stats.games.filter(function(game){
+          return game.year == year;
+        })
+
+        var tempArr = [];   
+
+        for (var i = 0; i < totalGames; i++){
+          tempArr.push(0);
+        }
+        
+        gameArr.forEach(function(game,index){
+          tempArr[game.week - 1] = game;
+        });
+
+        //Turn into array of chosen stat
+        var gameStatArr = tempArr.map(function(week,index){
+          if (typeof week != "object"){
+            return week;
+          } else {
+            if (stat == "compperc"){
+              return ((week.completions / week.attempts) * 100).toFixed(2);
+            } else if (stat == "tdperc"){
+              return ((week.tds / week.attempts) * 100).toFixed(2);
+            } else if (stat == "yardspersack"){
+              return (week.sackyards / week.sacks);
+            } else {
+              return week[stat];
+            }
+          }
+        });
+
+        //Get array of opposition for labels
+
+        /*var oppArr = gameStatArr.map(function(week,index){
+          if (typeof week != "object"){
+            return "";
+          } else {
+            if (week.location == "@"){
+              var homeaway = "@";
+            } else {
+              var homeaway = "vs";
+            }
+            return player.info.surname + " " + homeaway + " " + week.opp;
+          }
+        });*/
+        
+        dataCollection.push({
+          label: player.info.surname,
+          data: gameStatArr,
+          backgroundColor: "rgba(255,255,255,0)",
+          borderColor: player.info.colors.colorMain
+        });
+      }
+    });
+
+    var dataset = {
+      labels: weekArray,
+      datasets: dataCollection
+    };
+
+    this.yearCompare(dataset);
+  }
+
   //COMPARE TOOL CHARTS
 
   this.careerCompare = function(data) {
     var ctx = document.getElementById("careerCompare").getContext("2d");
     var options = {};
     window.careerCompareChart = new Chart(ctx, {
+      type: "line",
+      data: data,
+      options: options
+    });
+  };
+
+  this.yearCompare = function(data) {
+    var ctx = document.getElementById("yearCompare").getContext("2d");
+    var options = {};
+    window.yearCompareChart = new Chart(ctx, {
       type: "line",
       data: data,
       options: options
