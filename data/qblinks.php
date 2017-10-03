@@ -15,7 +15,7 @@
 		/*"ryan tannehill" => "http://www.pro-football-reference.com/players/T/TannRy00/gamelog/",
 		"cody kessler" => "http://www.pro-football-reference.com/players/K/KessCo00/gamelog/",
 		"blake bortles" => "http://www.pro-football-reference.com/players/B/BortBl00/gamelog/",
-		"jameis winston" => "http://www.pro-football-reference.com/players/W/WinsJa00/gamelog/"/*,
+		"jameis winston" => "http://www.pro-football-reference.com/players/W/WinsJa00/gamelog/",
 		"alex smith" => "http://www.pro-football-reference.com/players/S/SmitAl03/gamelog/",
 		"aaron rodgers" => "http://www.pro-football-reference.com/players/R/RodgAa00/gamelog/",
 		"andrew luck" => "http://www.pro-football-reference.com/players/L/LuckAn00/gamelog/",
@@ -30,20 +30,20 @@
 		"tony romo" => "http://www.pro-football-reference.com/players/R/RomoTo00/gamelog/",
 		"garrett grayson" => "http://www.pro-football-reference.com/players/G/GrayGa00/gamelog/",
 		"christian ponder" => "http://www.pro-football-reference.com/players/P/PondCh00/gamelog/",
-		"carson wentz" => "http://www.pro-football-reference.com/players/W/WentCa00/gamelog/",
+		*/"carson wentz" => "http://www.pro-football-reference.com/players/W/WentCa00/gamelog/",
 		"ryan fitzpatrick" => "http://www.pro-football-reference.com/players/F/FitzRy00/gamelog/",
 		"case keenum" => "http://www.pro-football-reference.com/players/K/KeenCa00/gamelog/",
 		"ryan nassib" => "http://www.pro-football-reference.com/players/N/NassRy00/gamelog/",
 		"dan orlovsky" => "http://www.pro-football-reference.com/players/O/OrloDa00/gamelog/",
 		"joe webb" => "http://www.pro-football-reference.com/players/W/WebbJo00/gamelog/",
-		"josh johnson" => "http://www.pro-football-reference.com/players/J/JohnJo05/gamelog/",*/
-		"jacoby brissett" => "http://www.pro-football-reference.com/players/B/BrisJa00/gamelog/"/*,
+		"josh johnson" => "http://www.pro-football-reference.com/players/J/JohnJo05/gamelog/",
+		"jacoby brissett" => "http://www.pro-football-reference.com/players/B/BrisJa00/gamelog/",
 		"mark sanchez" => "http://www.pro-football-reference.com/players/S/SancMa00/gamelog/",
 		"zach mettenberger" => "http://www.pro-football-reference.com/players/M/MettZa00/gamelog/",
 		"cardale jones" => "http://www.pro-football-reference.com/players/J/JoneCa01/gamelog/",
 		"nick foles" => "http://www.pro-football-reference.com/players/F/FoleNi00/gamelog/",
 		"drew stanton" => "http://www.pro-football-reference.com/players/S/StanDr00/gamelog/",
-		"mike glennon" => "http://www.pro-football-reference.com/players/G/GlenMi00/gamelog/",
+		"mike glennon" => "http://www.pro-football-reference.com/players/G/GlenMi00/gamelog/"/*,
 		"ej manuel" => "http://www.pro-football-reference.com/players/M/ManuEJ00/gamelog/",
 		"dak prescott" => "http://www.pro-football-reference.com/players/P/PresDa01/gamelog/",
 		"landry jones" => "http://www.pro-football-reference.com/players/J/JoneLa02/gamelog/",
@@ -54,7 +54,7 @@
 		"matt cassel" => "http://www.pro-football-reference.com/players/C/CassMa00/gamelog/",
 		"sam bradford" => "http://www.pro-football-reference.com/players/B/BradSa00/gamelog/",
 		"sean mannion" => "http://www.pro-football-reference.com/players/M/MannSe00/gamelog/",
-		"jay cutler" => "http://www.pro-football-reference.com/players/C/CutlJa00/gamelog/",
+		//"jay cutler" => "http://www.pro-football-reference.com/players/C/CutlJa00/gamelog/",
 		"philip rivers" => "http://www.pro-football-reference.com/players/R/RivePh00/gamelog/",
 		"marcus mariota" => "http://www.pro-football-reference.com/players/M/MariMa01/gamelog/",
 		"cam newton" => "http://www.pro-football-reference.com/players/N/NewtCa00/gamelog/",
@@ -91,7 +91,15 @@
 		"joe flacco" => "http://www.pro-football-reference.com/players/F/FlacJo00/gamelog/",
 		"bryce petty" => "http://www.pro-football-reference.com/players/P/PettBr01/gamelog/",
 		"matt barkley" => "http://www.pro-football-reference.com/players/B/BarkMa00/gamelog/"
-		"tom brady" => "http://www.pro-football-reference.com/players/B/BradTo00/gamelog/"*/
+		"tom brady" => "http://www.pro-football-reference.com/players/B/BradTo00/gamelog/",
+		//RETIRED QBS
+		"peyton manning" => "https://www.pro-football-reference.com/players/M/MannPe00/gamelog/",
+		"dan marino" => "https://www.pro-football-reference.com/players/M/MariDa00/gamelog/",
+		"joe montana" => "https://www.pro-football-reference.com/players/M/MontJo01/gamelog/",
+		"john elway" => "https://www.pro-football-reference.com/players/E/ElwaJo00/gamelog/",
+		"johnny unitas" => "https://www.pro-football-reference.com/players/U/UnitJo00/gamelog/",
+		"bernie kosar" => "https://www.pro-football-reference.com/players/K/KosaBe00/gamelog/",
+		"phil simms" => "https://www.pro-football-reference.com/players/S/SimmPh00/gamelog/"*/
 	);
 
 ?>
