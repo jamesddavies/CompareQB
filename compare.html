@@ -8,7 +8,7 @@
 	</span>
 	<span ng-if="player.stats">
 		<div class="erase" ng-click="erasePlayer($index + 1)" style="color: {{player.info.colors.textColor}};">x</div>
-		<a ng-href="#!/player/{{player.info.firstname.toLowerCase()}}%20{{player.info.surname.toLowerCase()}}">
+		<a ng-href="/player/{{player.info.firstname.toLowerCase()}}%20{{player.info.surname.toLowerCase()}}">
 			<img ng-src="{{player.info.img}}">
 		</a>
 		<div class="info" style="color: {{player.info.colors.textColor}};">

@@ -2,17 +2,17 @@ var playerApp = angular.module("playerApp", ["ngSanitize", "ngRoute"]);
 var baseURL = "php/playerSearch.php?search=";
 
 playerApp.config(function($routeProvider, $locationProvider) {
-  //$locationProvider.hashPrefix('');
+  $locationProvider.hashPrefix('');
 
   $routeProvider
     .when("/", {
       templateUrl: "main.html"
     })
-    .when("/player/:param", {
+    .when("/player/:param?", {
       templateUrl: "player.html",
       controller: "Player"
     })
-    .when("/compare", {
+    .when("/compare/:player1?/:player2?/:player3?/:player4?", {
       templateUrl: "compare.html",
       controller: "Compare"
     })
@@ -20,7 +20,7 @@ playerApp.config(function($routeProvider, $locationProvider) {
       templateUrl: "about.html"
     });
 
-  //$locationProvider.html5Mode(true);
+  $locationProvider.html5Mode(true);
 });
 
 playerApp.controller("Player", function(
@@ -335,6 +335,13 @@ playerApp.controller("Compare", function(
       });
     }, 400);
   };
+
+  for (param in $routeParams){
+    if ($routeParams.hasOwnProperty(param)){
+      $scope.players[param]['name'] = $routeParams[param];
+      $scope.reqPlayer(param.slice(param.length-1));
+    }
+  }
 
   $scope.erasePlayer = function(n) {
     var newObj = {

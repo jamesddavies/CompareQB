@@ -6,6 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>CompareQB</title>
+	<base href="/">
 
 	<!--<meta name="description" content="">-->
 	<meta name="author" content="James Davies">
@@ -50,8 +51,8 @@
 	<nav>
 	<ul>
 		<li class="search-link"><a><img src="img/search-blk.png"><br>Search</a></li>
-		<li><a href="#!/"><img src="img/home-blk.png"><br>Home</a></li>
-		<li><a href="#!/compare"><img src="img/arrows-blk.png"><br>Compare</a></li>
+		<li><a href="/"><img src="img/home-blk.png"><br>Home</a></li>
+		<li class="compare-link"><a href="/compare"><img src="img/arrows-blk.png"><br>Compare</a></li>
 	</ul>
 	</nav>
 
@@ -69,6 +70,11 @@ $(document).ready(function(){
 	$(".link").click(function(){
 		$(".search-overlay").toggleClass("show");
 	})
+
+	var url = window.location.href;
+	url = url.split("/");
+	console.log(url);
+	$(".compare-link a").attr("href", "/compare/" + url[url.length-1]);
 })
 </script>
 </body>

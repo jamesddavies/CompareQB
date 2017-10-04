@@ -12,7 +12,7 @@ $(".search-input").keyup(function(e){
 			//Go to player page on enter
 	
 			if (e.keyCode == 13){
-			window.location = "#!/player/" + $(this).val().toLowerCase();
+			window.location = "/player/" + $(this).val().toLowerCase();
 			$(".search-overlay").removeClass("show");
 			}
 	
@@ -43,7 +43,7 @@ $(".search-input").keyup(function(e){
 		});
 	
 		$(".search-input").change(function(){
-			$(".link").attr("href","#!/player/" + $(this).val().toLowerCase());
+			$(".link").attr("href","/player/" + $(this).val().toLowerCase());
 		})
 	
 		$(".suggestions").click(function(e){
@@ -52,7 +52,7 @@ $(".search-input").keyup(function(e){
 				$(this).siblings(".search-input").val(e.target.innerHTML).change();
 			}
 	
-			window.location = "#!/player/" + $(this).siblings(".search-input").val().toLowerCase();
+			window.location = "/player/" + $(this).siblings(".search-input").val().toLowerCase();
 			$(".search-overlay").removeClass("show");		
 		})
 
