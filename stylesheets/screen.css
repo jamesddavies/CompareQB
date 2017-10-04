@@ -824,19 +824,29 @@ nav ul li img {
   margin-top: 40px;
 }
 /* line 32, ../sass/partials/index.scss */
+.index-container h3 {
+  font-family: "Noto Sans", sans-serif;
+  color: #555;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  padding: 0 20px;
+  text-align: center;
+  line-height: 1.4;
+}
+/* line 41, ../sass/partials/index.scss */
 .index-container input {
   margin-top: 12px;
   width: 280px;
   font-family: "Noto Sans", sans-serif;
   font-size: 1.2rem;
 }
-/* line 38, ../sass/partials/index.scss */
+/* line 47, ../sass/partials/index.scss */
 .index-container .suggestions {
   width: 280px;
   text-align: left;
   background-color: #DEDEDE;
 }
-/* line 42, ../sass/partials/index.scss */
+/* line 51, ../sass/partials/index.scss */
 .index-container .suggestions li {
   padding: 6px 10px;
   border-bottom: 1px solid #BBB;
@@ -846,11 +856,11 @@ nav ul li img {
   cursor: pointer;
   transition: all 200ms ease-out;
 }
-/* line 50, ../sass/partials/index.scss */
+/* line 59, ../sass/partials/index.scss */
 .index-container .suggestions li:hover {
   color: #0FC4DB;
 }
-/* line 55, ../sass/partials/index.scss */
+/* line 64, ../sass/partials/index.scss */
 .index-container button {
   margin-top: 8px;
   width: 280px;
@@ -863,12 +873,12 @@ nav ul li img {
   border-radius: 4px;
   transition: all 400ms ease-out;
 }
-/* line 66, ../sass/partials/index.scss */
+/* line 75, ../sass/partials/index.scss */
 .index-container button:hover {
   transform: translateY(1px);
   color: #888;
 }
-/* line 71, ../sass/partials/index.scss */
+/* line 80, ../sass/partials/index.scss */
 .index-container .compare {
   margin-top: 8px;
   text-align: center;
@@ -882,21 +892,22 @@ nav ul li img {
   transition: all 400ms ease-out;
   cursor: pointer;
 }
-/* line 83, ../sass/partials/index.scss */
+/* line 92, ../sass/partials/index.scss */
 .index-container .compare:hover {
   transform: translateY(1px);
   color: #04B9D1;
 }
-/* line 88, ../sass/partials/index.scss */
+/* line 97, ../sass/partials/index.scss */
 .index-container a {
   text-decoration: none;
 }
-/* line 91, ../sass/partials/index.scss */
+/* line 100, ../sass/partials/index.scss */
 .index-container .about {
   font-family: "Noto Sans", sans-serif;
   font-size: 14px;
   color: #333;
   padding: 20px;
+  line-height: 1.4;
 }
 
 /* line 3, ../sass/partials/search-overlay.scss */

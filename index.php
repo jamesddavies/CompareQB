@@ -24,7 +24,7 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.css"/>
 
 	<!--Favicon-->
-	<!--<link rel="icon" type="image/png" href="images/icon.png">-->
+	<link rel="icon" type="image/png" href="img/helmet.png">
 
 	<!--Website functions-->
 	<script src="js/functions.js"></script>

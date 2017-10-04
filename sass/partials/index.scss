@@ -29,6 +29,15 @@ $fontstack: "Noto Sans", sans-serif;
 		font-size: 1.4rem;
 		margin-top: 40px;
 	}
+	h3 {
+		font-family: $fontstack;
+		color: #555;
+		font-size: 1.1rem;
+		margin-top: 20px;
+		padding: 0 20px;
+		text-align: center;
+		line-height: 1.4;
+	}
 	input {
 		margin-top: 12px;
 		width: 280px;
@@ -93,5 +102,6 @@ $fontstack: "Noto Sans", sans-serif;
 		font-size: 14px;
 		color: #333;
 		padding: 20px;
+		line-height: 1.4;
 	}
 }
