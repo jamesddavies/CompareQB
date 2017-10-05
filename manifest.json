@@ -1,0 +1,15 @@
+{
+  "short_name": "CompareQB",
+  "name": "CompareQB",
+  "icons": [
+    {
+      "src": "img/helmet.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/?utm_source=homescreen",
+  "display": "standalone",
+  "theme_color": "#04B9D1",
+  "background_color": "#FAFAFA"
+}

@@ -10,6 +10,8 @@ $fontstack: "Noto Sans", sans-serif;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	overflow-y: auto;
+	margin-bottom: 80px;
 	.about-link {
 		position: absolute;
 		top: 10px;

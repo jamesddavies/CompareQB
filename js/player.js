@@ -281,7 +281,7 @@ playerApp.controller("Compare", function(
     player4: new StartObject()
   };
 
-  $scope.reqPlayer = function(n) {
+  $scope.reqPlayer = function(n,year) {
     if (n == "1") var playerNum = $scope.players.player1;
     if (n == "2") var playerNum = $scope.players.player2;
     if (n == "3") var playerNum = $scope.players.player3;
@@ -305,7 +305,11 @@ playerApp.controller("Compare", function(
       console.log($scope.players);
       $scope.calculateTotalYears();
 
-      $scope.playerYears[player.data.info.surname] = player.data.stats.allYears[0];
+      if ($scope.paramYear != 'undefined'){
+        $scope.playerYears[player.data.info.surname] = year;
+      } else {
+        $scope.playerYears[player.data.info.surname] = player.data.stats.allYears[0];
+      }
 
       $timeout(function() {
         if ($scope.compareYearCareer == "career"){
@@ -321,7 +325,7 @@ playerApp.controller("Compare", function(
             $scope.playerYears
           );
         }
-      });
+      },1000);
     });
 
     $timeout(function() {
@@ -338,8 +342,15 @@ playerApp.controller("Compare", function(
 
   for (param in $routeParams){
     if ($routeParams.hasOwnProperty(param)){
-      $scope.players[param]['name'] = $routeParams[param];
-      $scope.reqPlayer(param.slice(param.length-1));
+      if ($routeParams[param].includes("|")){
+        var paramSplit = $routeParams[param].split("|");
+        $scope.players[param]['name'] = paramSplit[0];
+        $scope.compareYearCareer = "year";
+        $scope.reqPlayer(param.slice(param.length-1), paramSplit[1]);
+      } else {
+        $scope.players[param]['name'] = $routeParams[param];
+        $scope.reqPlayer(param.slice(param.length-1));
+      }
     }
   }
 

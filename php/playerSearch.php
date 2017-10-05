@@ -5,6 +5,10 @@ ini_set('display_errors', 1);
 
 require('config.php');
 
+	if ($_SERVER['REQUEST_METHOD'] != 'GET'){
+		die("Request method not accepted. Try a GET request instead.");
+	}
+
 	if (isset($_GET['search'])){
 		$search = strtolower($_GET['search']);
 	}

@@ -799,31 +799,33 @@ nav ul li img {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow-y: auto;
+  margin-bottom: 80px;
 }
-/* line 13, ../sass/partials/index.scss */
+/* line 15, ../sass/partials/index.scss */
 .index-container .about-link {
   position: absolute;
   top: 10px;
   left: 10px;
 }
-/* line 18, ../sass/partials/index.scss */
+/* line 20, ../sass/partials/index.scss */
 .index-container h1 {
   font-family: "Noto Sans", sans-serif;
   font-size: 2.8rem;
   color: #0FC4DB;
 }
-/* line 22, ../sass/partials/index.scss */
+/* line 24, ../sass/partials/index.scss */
 .index-container h1 .h1-color2 {
   color: #068C9E;
 }
-/* line 26, ../sass/partials/index.scss */
+/* line 28, ../sass/partials/index.scss */
 .index-container h2 {
   font-family: "Noto Sans", sans-serif;
   color: #222;
   font-size: 1.4rem;
   margin-top: 40px;
 }
-/* line 32, ../sass/partials/index.scss */
+/* line 34, ../sass/partials/index.scss */
 .index-container h3 {
   font-family: "Noto Sans", sans-serif;
   color: #555;
@@ -833,20 +835,20 @@ nav ul li img {
   text-align: center;
   line-height: 1.4;
 }
-/* line 41, ../sass/partials/index.scss */
+/* line 43, ../sass/partials/index.scss */
 .index-container input {
   margin-top: 12px;
   width: 280px;
   font-family: "Noto Sans", sans-serif;
   font-size: 1.2rem;
 }
-/* line 47, ../sass/partials/index.scss */
+/* line 49, ../sass/partials/index.scss */
 .index-container .suggestions {
   width: 280px;
   text-align: left;
   background-color: #DEDEDE;
 }
-/* line 51, ../sass/partials/index.scss */
+/* line 53, ../sass/partials/index.scss */
 .index-container .suggestions li {
   padding: 6px 10px;
   border-bottom: 1px solid #BBB;
@@ -856,11 +858,11 @@ nav ul li img {
   cursor: pointer;
   transition: all 200ms ease-out;
 }
-/* line 59, ../sass/partials/index.scss */
+/* line 61, ../sass/partials/index.scss */
 .index-container .suggestions li:hover {
   color: #0FC4DB;
 }
-/* line 64, ../sass/partials/index.scss */
+/* line 66, ../sass/partials/index.scss */
 .index-container button {
   margin-top: 8px;
   width: 280px;
@@ -873,12 +875,12 @@ nav ul li img {
   border-radius: 4px;
   transition: all 400ms ease-out;
 }
-/* line 75, ../sass/partials/index.scss */
+/* line 77, ../sass/partials/index.scss */
 .index-container button:hover {
   transform: translateY(1px);
   color: #888;
 }
-/* line 80, ../sass/partials/index.scss */
+/* line 82, ../sass/partials/index.scss */
 .index-container .compare {
   margin-top: 8px;
   text-align: center;
@@ -892,16 +894,16 @@ nav ul li img {
   transition: all 400ms ease-out;
   cursor: pointer;
 }
-/* line 92, ../sass/partials/index.scss */
+/* line 94, ../sass/partials/index.scss */
 .index-container .compare:hover {
   transform: translateY(1px);
   color: #04B9D1;
 }
-/* line 97, ../sass/partials/index.scss */
+/* line 99, ../sass/partials/index.scss */
 .index-container a {
   text-decoration: none;
 }
-/* line 100, ../sass/partials/index.scss */
+/* line 102, ../sass/partials/index.scss */
 .index-container .about {
   font-family: "Noto Sans", sans-serif;
   font-size: 14px;
@@ -1191,7 +1193,7 @@ nav ul li img {
   font-family: "Noto Sans", sans-serif;
   text-align: center;
   font-size: 18px;
-  margin-top: 32px;
+  margin-top: 102px;
   color: #999;
 }
 
@@ -1346,53 +1348,57 @@ nav ul li img {
     width: 100%;
   }
 
-  /* line 126, ../sass/screen.scss */
+  /* line 125, ../sass/screen.scss */
+  .index-container {
+    margin-bottom: 0;
+  }
+  /* line 127, ../sass/screen.scss */
   .index-container h1 {
     font-size: 5rem;
   }
 
-  /* line 130, ../sass/screen.scss */
+  /* line 131, ../sass/screen.scss */
   .compare-tool {
     flex-direction: row;
     height: 100%;
     top: 0;
   }
-  /* line 134, ../sass/screen.scss */
+  /* line 135, ../sass/screen.scss */
   .compare-tool .compare-player {
     flex: grow;
     margin: 0 14px;
     max-width: 250px;
   }
-  /* line 138, ../sass/screen.scss */
+  /* line 139, ../sass/screen.scss */
   .compare-tool .compare-player:last-child {
     margin-bottom: 0;
   }
 
-  /* line 143, ../sass/screen.scss */
+  /* line 144, ../sass/screen.scss */
   .compare-filters {
     flex-direction: row;
     height: 52px;
     top: 0;
   }
 
-  /* line 149, ../sass/screen.scss */
+  /* line 150, ../sass/screen.scss */
   .select-container .player-select {
     width: 48%;
   }
 
-  /* line 153, ../sass/screen.scss */
+  /* line 154, ../sass/screen.scss */
   .chart-size-controls {
     display: flex;
   }
 }
 @media (min-width: 900px) {
-  /* line 164, ../sass/screen.scss */
+  /* line 165, ../sass/screen.scss */
   .filter .filters .accordion .tab .tab-content .game {
     width: 25%;
   }
 }
 @media (min-width: 1100px) {
-  /* line 176, ../sass/screen.scss */
+  /* line 177, ../sass/screen.scss */
   .select-container .player-select {
     width: 23%;
   }

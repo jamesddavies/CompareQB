@@ -51,7 +51,7 @@
 	<nav>
 	<ul>
 		<li class="search-link"><a><img src="img/search-blk.png"><br>Search</a></li>
-		<li><a href="/"><img src="img/home-blk.png"><br>Home</a></li>
+		<li class="home-link"><a href="/"><img src="img/home-blk.png"><br>Home</a></li>
 		<li class="compare-link"><a href="/compare"><img src="img/arrows-blk.png"><br>Compare</a></li>
 	</ul>
 	</nav>
@@ -71,10 +71,19 @@ $(document).ready(function(){
 		$(".search-overlay").toggleClass("show");
 	})
 
+	function checkUrl(){
 	var url = window.location.href;
-	url = url.split("/");
-	console.log(url);
-	$(".compare-link a").attr("href", "/compare/" + url[url.length-1]);
+		if (url.match(/\/player/)){
+			url = url.split("/");
+			$(".compare-link a").attr("href", "/compare/" + url[url.length-1]);
+		} else {
+			$(".compare-link a").attr("href", "/compare");
+		}
+	}
+
+	checkUrl();
+
+	$(".home-link").click(checkUrl);
 })
 </script>
 </body>
