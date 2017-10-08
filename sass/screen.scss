@@ -22,6 +22,7 @@ body {
 @import "partials/index";
 @import "partials/search-overlay";
 @import "partials/compare";
+@import "partials/browseAll";
 
 
 @media (min-width: 640px){
@@ -154,6 +155,20 @@ body {
 	.chart-size-controls {
 		display: flex;
 	}
+	.games-list {
+		.player-games {
+			.games-container {
+				.game-list-item {
+					flex-basis: 11.5%;
+				}
+			}
+		}
+	}
+	.browse-all-container {
+		.browse-all-item {
+			flex-basis: 31%;
+		}
+	}
 }
 
 @media (min-width: 900px){
@@ -176,6 +191,11 @@ body {
 	.select-container {
 		.player-select {
 			width: 23%;
+		}
+	}
+	.browse-all-container {
+		.browse-all-item {
+			flex-basis: 18%;
 		}
 	}
 }

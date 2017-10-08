@@ -221,7 +221,7 @@
                             <canvas id="tdPerc" width="300" height="300"></canvas>
                         </div>
                         <div class="chart-stat">
-                            <p>{{ ((pass.td / pass.att) * 100).toFixed(1) }}%</p>
+                            <p>{{ ((pass.td / pass.att) * 100).toFixed(1) == 'NaN' ? '0' : ((pass.td / pass.att) * 100).toFixed(1) }}%</p>
                             <p class="subtitle">Touchdown %</p>
                         </div>
                     </div>
@@ -243,7 +243,7 @@
                             <canvas id="intPerc" width="300" height="300"></canvas>
                         </div>
                         <div class="chart-stat">
-                            <p>{{ ((pass.int / pass.att) * 100).toFixed(1) }}%</p>
+                            <p>{{ ((pass.int / pass.att) * 100).toFixed(1) == 'NaN' ? '0' : ((pass.int / pass.att) * 100).toFixed(1) }}%</p>
                             <p class="subtitle">INT %</p>
                         </div>
                     </div>
@@ -255,7 +255,7 @@
                             <canvas id="sackPerc" width="300" height="300"></canvas>
                         </div>
                         <div class="chart-stat">
-                            <p>{{ ((pass.sacks / pass.att) * 100).toFixed(1) }}%</p>
+                            <p>{{ (((pass.sacks / pass.att) * 100).toFixed(1)) == 'NaN' ? '0' : ((pass.sacks / pass.att) * 100).toFixed(1) }}%</p>
                             <p class="subtitle">Sack %</p>
                         </div>
                     </div>
@@ -292,3 +292,20 @@
 </div>
 
 <script src="js/player-ui-functions.js"></script>
+<script>
+    $(document).ready(function(){
+        $(window).scrollTop(0);
+
+    function checkUrl(){
+        var url = window.location.href;
+        if (url.includes("player")){
+            url = url.split("/");
+            $(".compare-link a").attr("href", "/compare/" + url[url.length-1]);
+        } else {
+            $(".compare-link a").attr("href", "/compare");
+        }
+    }
+
+        checkUrl();
+    });
+</script>

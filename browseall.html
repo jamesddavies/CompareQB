@@ -1,0 +1,6 @@
+<div class="browse-all-container">
+    <a class="browse-all-item" ng-repeat="player in playerArray" ng-href="/player/{{player.firstname}}+{{player.surname}}" style="color: {{player.textColor}}; background: linear-gradient(60deg, {{player.colorSecondary}}, {{player.colorMain}});">
+        <img ng-src="{{player.picurl}}">
+        {{player.firstname}} {{player.surname}} - {{player.team}}
+    </a>
+</div>

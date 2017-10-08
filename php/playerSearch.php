@@ -57,24 +57,12 @@ require('config.php');
 			$height = number_format($ht, 1, "' ", "");
 			$weight = $row['weight'];
 			$years = intval(date("Y")) - intval($row['drafted_year']);
-			if ($years < 1){
-				$exp = "Rookie";
-			} else if ($years == 1){
-				$exp = $years . " season";
-			} else {
-				$exp = $years . " seasons";
-			}
-			if ($row['retired'] != 0){
-				$exp = (intval($row['retired']) - intval($row['drafted_year']) + 1) . " seasons";
-			}
 			$drafted_year = $row['drafted_year'];
 			$drafted_info = $row['drafted_info'];
 			$picurl = $row['picurl'];
 			$count++;
 		
 	}
-
-
 
 	//Format particular names
 
@@ -452,10 +440,14 @@ $db = null;
 
 	//Passer rating formula
 
-	$rateVar1 = (($passcmp/$passatt) - 0.3) / 0.2;
-	$rateVar2 = (($passyds/$passatt) - 3) / 4;
-	$rateVar3 = ($passtd/$passatt) / 0.05;
-	$rateVar4 = (0.095 - ($passint/$passatt)) / 0.04;
+	$rateVar1 = $rateVar2 = $rateVar3 = $rateVar4 = 0;
+
+	if ($passatt > 0){
+		$rateVar1 = (($passcmp/$passatt) - 0.3) / 0.2;
+		$rateVar2 = (($passyds/$passatt) - 3) / 4;
+		$rateVar3 = ($passtd/$passatt) / 0.05;
+		$rateVar4 = (0.095 - ($passint/$passatt)) / 0.04;
+	}
 
 	$rateVar = $rateVar1 + $rateVar2 + $rateVar3 + $rateVar4;
 
@@ -485,8 +477,19 @@ $db = null;
 
 	$aya = number_format((float)($aya / $count), 1, ".", "");
 
+	} else {
+		$seasons = $missedgames = $missedperc = 0;
 	}
 
+	$yearsyds = [];
+	$yearstds = [];
+	$yearsints = [];
+	$yearsstarts = [];
+	$yearsgamesplayed = [];
+	$attempts = [];
+	$yearscomps = [];
+	$yearssacks = [];
+	$yearssackyards = [];
 
 	foreach ($years as $yr){
 		$yearsyds[] = ${"yds".$yr};
@@ -506,7 +509,6 @@ $db = null;
 	$yearsYardsPerSack = [];
 
 	//Avg by year
-
 	foreach ($yearsyds as $i => $yearyds){
 		//Yards per Attempt
 		if ($attempts[$i]){
@@ -639,7 +641,6 @@ $player = [
 		"college" => $college,
 		"height" => $height,
 		"weight" => $weight,
-		"exp" => $exp,
 		"draftedYear" => $drafted_year,
 		"draftedInfo" => $drafted_info,
 		"img" => $picurl,

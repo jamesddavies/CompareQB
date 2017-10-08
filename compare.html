@@ -71,6 +71,26 @@
 <canvas ng-if="totalYears.length > 0" ng-class="(compareYearCareer == 'career') ? 'show' : ''" id="careerCompare" width="600"></canvas>
 <canvas ng-if="totalYears.length > 0" ng-class="(compareYearCareer == 'year') ? 'show' : ''" id="yearCompare" width="600"></canvas>
 
+<div class="share-links" ng-class="(totalYears.length > 0) ? 'show' : ''">
+	<a id="shareLink" ng-click="createLink()">Share Link&nbsp;<img src="img/share.png" height="22"></a>
+	<a id="downloadLink" download="CompareQBChart.png">Download as PNG&nbsp;<img src="img/download.png" height="24"></a>
+</div>
+
+<div class="games-list" ng-if="compareYearCareer == 'year' && totalYears.length > 0" ng-repeat="player in players">
+	<div class="player-games" ng-if="player.hasOwnProperty('stats')">
+		<p>{{player.info.surname}} Games in {{playerYears[player.info.surname]}}</p>
+		<div class="games-container">
+			<div class="game-list-item" style="background-color: {{player.info.colors.colorMain}}; color: {{player.info.colors.textColor}};" ng-repeat="game in playerYears[player.info.surname + 'games']">Game {{game.week}}<br><strong>{{game.opp}}</strong></div>
+		</div>	
+	</div>
+</div>
+
+<div class="share-link-overlay">
+	<div class="close-share-link">x</div>
+	<input class="share-link" type="text" ng-value="shareLink">
+	<p class="share-link-outcome"></p>
+</div>
+
 <script>
 
 $(".chart-size-up").click(function(){
@@ -88,6 +108,38 @@ $(".chart-size-down").click(function(){
 		var height = $('canvas').height();
 		$('canvas').css({"max-width": "" + (width-100) + "px", "height": "" + (height-50) + "px"});
 	}
+})
+
+$("#downloadLink").click(function(){
+	var canvas = document.getElementById("yearCompare");
+	var destCanvas = document.createElement('canvas');
+	destCanvas.width = canvas.width;
+	destCanvas.height = canvas.height;
+	var ctx = destCanvas.getContext('2d');
+	ctx.fillStyle = 'white';
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
+	ctx.drawImage(canvas,0,0);
+	var img = destCanvas.toDataURL('image/png', 2.0);
+	$(this).attr("href", img);
+});
+
+$("#shareLink").click(function(){
+	$(".share-link-overlay").addClass("show");
+	setTimeout(function(){
+		$(".share-link").select();
+		try {
+			document.execCommand("copy");
+			$(".share-link-outcome").text("Link copied to clipboard.");
+		}
+		catch(e) {
+			$(".share-link-outcome").text("Copying to clipboard failed.");
+			console.log(e);
+		}		
+	},200);
+});
+
+$(".close-share-link").click(function(){
+	$(".share-link-overlay").removeClass("show");
 })
 
 setTimeout(function(){

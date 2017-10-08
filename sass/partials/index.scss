@@ -73,28 +73,23 @@ $fontstack: "Noto Sans", sans-serif;
 		border: none;
 		color: #FDFDFD;
 		border-radius: 4px;
-		transition: all 400ms ease-out;
-		&:hover {
+		transition: all 300ms ease-out;
+		&:active {
 			transform: translateY(1px);
-			color: #888;
 		}
 	}
-	.compare {
+	.browse-link {
 		margin-top: 8px;
 		text-align: center;
 		width: 280px;
 		font-family: $fontstack;
 		font-size: 0.9rem;
 		padding: 8px 0;
-		background-color: #FDFDFD;
+		background: #FDFDFD;
 		color: #04B9D1;
 		border-radius: 4px;
 		transition: all 400ms ease-out;
 		cursor: pointer;
-		&:hover {
-			transform: translateY(1px);
-			color: #04B9D1;
-		}
 	}
 	a {
 		text-decoration: none;

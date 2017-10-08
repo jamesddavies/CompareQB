@@ -1,0 +1,28 @@
+/* line 3, ../../sass/partials/browseAll.scss */
+.browse-all-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 74px;
+}
+/* line 8, ../../sass/partials/browseAll.scss */
+.browse-all-container .browse-all-item {
+  flex-basis: 48%;
+  margin: 1%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+/* line 22, ../../sass/partials/browseAll.scss */
+.browse-all-container .browse-all-item img {
+  width: 40%;
+  max-height: 120px;
+}

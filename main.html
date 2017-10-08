@@ -12,6 +12,7 @@
 </ul>
 	
 <a class="link"><button class="search-btn">Search</button></a>
+<a href="/browseall"><button class="browse-link">Browse All QBs</button></a>
 </div>
 
 <script>
@@ -64,5 +65,21 @@
 		window.location = "/player/" + $(this).siblings(".search-input").val().toLowerCase();
 		$(".search-overlay").removeClass("show");		
 	})
+
+	$(document).ready(function(){
+		
+		function checkUrl(){
+			var url = window.location.href;
+			if (url.includes("player")){
+				url = url.split("/");
+				$(".compare-link a").attr("href", "/compare/" + url[url.length-1]);
+			} else {
+				$(".compare-link a").attr("href", "/compare");
+			}
+		}
+
+		checkUrl();
+
+	});
 
 </script>

@@ -27,6 +27,9 @@
 	<!--Favicon-->
 	<link rel="icon" type="image/png" href="img/helmet.png">
 
+	<!--Manifest-->
+	<link rel="manifest" href="manifest.json">
+
 	<!--Website functions-->
 	<script src="js/functions.js"></script>
 
@@ -71,20 +74,7 @@ $(document).ready(function(){
 		$(".search-overlay").toggleClass("show");
 	})
 
-	function checkUrl(){
-	var url = window.location.href;
-		if (url.match(/\/player/)){
-			url = url.split("/");
-			$(".compare-link a").attr("href", "/compare/" + url[url.length-1]);
-		} else {
-			$(".compare-link a").attr("href", "/compare");
-		}
-	}
-
-	checkUrl();
-
-	$(".home-link").click(checkUrl);
-})
+});
 </script>
 </body>
 </html>

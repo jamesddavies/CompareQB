@@ -1,5 +1,6 @@
 var playerApp = angular.module("playerApp", ["ngSanitize", "ngRoute"]);
 var baseURL = "php/playerSearch.php?search=";
+var browseURL = "php/browseAll.php";
 
 playerApp.config(function($routeProvider, $locationProvider) {
   $locationProvider.hashPrefix('');
@@ -18,6 +19,10 @@ playerApp.config(function($routeProvider, $locationProvider) {
     })
     .when("/about", {
       templateUrl: "about.html"
+    })
+    .when("/browseall", {
+      templateUrl: "browseall.html",
+      controller: "BrowseAll"
     });
 
   $locationProvider.html5Mode(true);
@@ -274,6 +279,7 @@ playerApp.controller("Compare", function(
       }
     };
   }
+  $scope.playerGamesInYear = {};
   $scope.players = {
     player1: new StartObject(),
     player2: new StartObject(),
@@ -281,7 +287,7 @@ playerApp.controller("Compare", function(
     player4: new StartObject()
   };
 
-  $scope.reqPlayer = function(n,year) {
+  $scope.reqPlayer = function(n,startYear) {
     if (n == "1") var playerNum = $scope.players.player1;
     if (n == "2") var playerNum = $scope.players.player2;
     if (n == "3") var playerNum = $scope.players.player3;
@@ -305,11 +311,19 @@ playerApp.controller("Compare", function(
       console.log($scope.players);
       $scope.calculateTotalYears();
 
-      if ($scope.paramYear != 'undefined'){
-        $scope.playerYears[player.data.info.surname] = year;
+      if (startYear){
+        $scope.playerYears[player.data.info.surname] = parseInt(startYear);
+        $scope.playerYears[player.data.info.surname + "games"] = player.data.stats.games.filter(function(e,i){
+          return e.year == startYear;
+        });
       } else {
         $scope.playerYears[player.data.info.surname] = player.data.stats.allYears[0];
+        $scope.playerYears[player.data.info.surname + "games"] = player.data.stats.games.filter(function(e,i){
+          return e.year == player.data.stats.allYears[0];
+        });
       }
+
+      console.log($scope.playerYears);
 
       $timeout(function() {
         if ($scope.compareYearCareer == "career"){
@@ -338,12 +352,14 @@ playerApp.controller("Compare", function(
         }
       });
     }, 400);
+
   };
 
+  //Parse URL params
   for (param in $routeParams){
     if ($routeParams.hasOwnProperty(param)){
-      if ($routeParams[param].includes("|")){
-        var paramSplit = $routeParams[param].split("|");
+      if ($routeParams[param].includes("-")){
+        var paramSplit = $routeParams[param].split("-");
         $scope.players[param]['name'] = paramSplit[0];
         $scope.compareYearCareer = "year";
         $scope.reqPlayer(param.slice(param.length-1), paramSplit[1]);
@@ -447,16 +463,58 @@ playerApp.controller("Compare", function(
           $scope.playerYears
         );
       }
+      angular.forEach($scope.players, function(player,index){
+        if (player.hasOwnProperty("stats")){
+          $scope.playerYears[player.info.surname + "games"] = player.stats.games.filter(function(e,i){
+            return e.year == $scope.playerYears[player.info.surname];
+          });
+        }
+      });
     });
   }
 
   $scope.changePlayerYear = function(){
+    angular.forEach($scope.players, function(player,index){
+      if (player.hasOwnProperty("stats")){
+        $scope.playerYears[player.info.surname + "games"] = player.stats.games.filter(function(e,i){
+          return e.year == $scope.playerYears[player.info.surname];
+        });
+      }
+    });
     charts.updateYearCompareChart(
       $scope.players,
       $scope.chartStat,
       $scope.playerYears
     );
   }
+
+  $scope.createLink = function(){
+    var link = "";
+    angular.forEach($scope.players, function(player,index){
+      link += player.info.firstname + "+" + player.info.surname;
+      if ($scope.compareYearCareer == "year"){
+        var yr = $scope.playerYears[player.info.surname];
+        link += "-" + yr;
+      }
+      link += "/";
+    });
+    $scope.shareLink = "http://compareqb.com/compare/" + link;
+  }
+});
+
+playerApp.controller("BrowseAll", function($scope,$http){
+  var request = {
+    url: browseURL,
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json"
+    }
+  };
+  $http(request).then(function(response){
+    console.log(response);
+    $scope.playerArray = response.data.players;
+    console.log($scope.playerArray);
+  });
 });
 
 playerApp.service("charts", function() {
@@ -569,10 +627,8 @@ playerApp.service("charts", function() {
 
     angular.forEach(players, function(player,index){
       if (player.hasOwnProperty("stats")){
-        var year = playerYears[player.info.surname];
-        var gameArr = player.stats.games.filter(function(game){
-          return game.year == year;
-        })
+
+        var gameArr = playerYears[player.info.surname + "games"];
 
         var tempArr = [];   
 
@@ -600,21 +656,6 @@ playerApp.service("charts", function() {
             }
           }
         });
-
-        //Get array of opposition for labels
-
-        /*var oppArr = gameStatArr.map(function(week,index){
-          if (typeof week != "object"){
-            return "";
-          } else {
-            if (week.location == "@"){
-              var homeaway = "@";
-            } else {
-              var homeaway = "vs";
-            }
-            return player.info.surname + " " + homeaway + " " + week.opp;
-          }
-        });*/
         
         dataCollection.push({
           label: player.info.surname,

@@ -873,37 +873,31 @@ nav ul li img {
   border: none;
   color: #FDFDFD;
   border-radius: 4px;
-  transition: all 400ms ease-out;
+  transition: all 300ms ease-out;
 }
 /* line 77, ../sass/partials/index.scss */
-.index-container button:hover {
+.index-container button:active {
   transform: translateY(1px);
-  color: #888;
 }
-/* line 82, ../sass/partials/index.scss */
-.index-container .compare {
+/* line 81, ../sass/partials/index.scss */
+.index-container .browse-link {
   margin-top: 8px;
   text-align: center;
   width: 280px;
   font-family: "Noto Sans", sans-serif;
   font-size: 0.9rem;
   padding: 8px 0;
-  background-color: #FDFDFD;
+  background: #FDFDFD;
   color: #04B9D1;
   border-radius: 4px;
   transition: all 400ms ease-out;
   cursor: pointer;
 }
 /* line 94, ../sass/partials/index.scss */
-.index-container .compare:hover {
-  transform: translateY(1px);
-  color: #04B9D1;
-}
-/* line 99, ../sass/partials/index.scss */
 .index-container a {
   text-decoration: none;
 }
-/* line 102, ../sass/partials/index.scss */
+/* line 97, ../sass/partials/index.scss */
 .index-container .about {
   font-family: "Noto Sans", sans-serif;
   font-size: 14px;
@@ -1095,7 +1089,7 @@ nav ul li img {
 #careerCompare, #yearCompare {
   width: 90%;
   max-width: 1000px;
-  margin: 20px auto 80px auto;
+  margin: 20px auto;
   transition: all 180ms ease-out;
   position: absolute;
   top: -1000px;
@@ -1239,34 +1233,177 @@ nav ul li img {
   margin: 10px;
 }
 
+/* line 234, ../sass/partials/compare.scss */
+.games-list {
+  width: 100%;
+  margin-bottom: 70px;
+  text-align: center;
+}
+/* line 239, ../sass/partials/compare.scss */
+.games-list .player-games p {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Noto Sans", sans-serif;
+  color: #222;
+  padding: 12px 0;
+}
+/* line 246, ../sass/partials/compare.scss */
+.games-list .player-games .games-container {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+/* line 251, ../sass/partials/compare.scss */
+.games-list .player-games .games-container .game-list-item {
+  height: 60px;
+  margin: 0.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px 0;
+  box-sizing: border-box;
+  color: #fdfdfd;
+  font-size: 12px;
+  font-family: "Noto Sans", sans-serif;
+  flex-basis: 24%;
+}
+
+/* line 269, ../sass/partials/compare.scss */
+.share-links {
+  text-align: center;
+  margin-bottom: 80px;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+/* line 276, ../sass/partials/compare.scss */
+.share-links a {
+  width: 160px;
+  height: 30px;
+  background-color: transparent;
+  color: #333;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  cursor: pointer;
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+}
+/* line 291, ../sass/partials/compare.scss */
+.share-links.show {
+  opacity: 1;
+}
+
+/* line 296, ../sass/partials/compare.scss */
+.share-link-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: all 300ms ease-out;
+  font-family: "Noto Sans", sans-serif;
+}
+/* line 311, ../sass/partials/compare.scss */
+.share-link-overlay .close-share-link {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fdfdfd;
+  font-size: 36px;
+  cursor: pointer;
+}
+/* line 319, ../sass/partials/compare.scss */
+.share-link-overlay input {
+  width: 96%;
+  max-width: 360px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  color: #222;
+}
+/* line 326, ../sass/partials/compare.scss */
+.share-link-overlay .share-link-outcome {
+  font-size: 14px;
+  color: #fdfdfd;
+  text-align: center;
+  padding: 20px;
+}
+/* line 332, ../sass/partials/compare.scss */
+.share-link-overlay.show {
+  z-index: 100;
+  opacity: 1;
+}
+
+/* line 3, ../sass/partials/browseAll.scss */
+.browse-all-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 74px;
+}
+/* line 8, ../sass/partials/browseAll.scss */
+.browse-all-container .browse-all-item {
+  flex-basis: 48%;
+  margin: 1%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+/* line 22, ../sass/partials/browseAll.scss */
+.browse-all-container .browse-all-item img {
+  width: 40%;
+  max-height: 120px;
+}
+
 @media (min-width: 640px) {
-  /* line 29, ../sass/screen.scss */
+  /* line 30, ../sass/screen.scss */
   .header-container img {
     top: 40px;
     right: 80px;
   }
-  /* line 33, ../sass/screen.scss */
+  /* line 34, ../sass/screen.scss */
   .header-container .first-name {
     margin: 60px 10px 5px 82px;
     font-size: 2rem;
   }
-  /* line 37, ../sass/screen.scss */
+  /* line 38, ../sass/screen.scss */
   .header-container .surname {
     margin: 0 10px 10px 80px;
     font-size: 2.6rem;
   }
-  /* line 41, ../sass/screen.scss */
+  /* line 42, ../sass/screen.scss */
   .header-container .team {
     margin: 20px 10px 5px 82px;
     font-size: 1.4rem;
   }
-  /* line 45, ../sass/screen.scss */
+  /* line 46, ../sass/screen.scss */
   .header-container .number {
     margin: 5px 10px 5px 82px;
     font-size: 1.4rem;
   }
 
-  /* line 50, ../sass/screen.scss */
+  /* line 51, ../sass/screen.scss */
   .player-info {
     color: #FDFDFD;
     margin-top: 0;
@@ -1274,25 +1411,25 @@ nav ul li img {
     top: 290px;
     left: 0;
   }
-  /* line 56, ../sass/screen.scss */
+  /* line 57, ../sass/screen.scss */
   .player-info h3 {
     margin-left: 80px;
   }
-  /* line 59, ../sass/screen.scss */
+  /* line 60, ../sass/screen.scss */
   .player-info .height {
     white-space: nowrap;
   }
-  /* line 63, ../sass/screen.scss */
+  /* line 64, ../sass/screen.scss */
   .player-info .container .twelve {
     text-align: center;
   }
-  /* line 66, ../sass/screen.scss */
+  /* line 67, ../sass/screen.scss */
   .player-info .container .drafted {
     margin-top: 20px;
     text-align: center;
   }
 
-  /* line 72, ../sass/screen.scss */
+  /* line 73, ../sass/screen.scss */
   .player-stats {
     color: #FDFDFD;
     margin-top: 0;
@@ -1300,12 +1437,12 @@ nav ul li img {
     top: 460px;
     left: 0;
   }
-  /* line 78, ../sass/screen.scss */
+  /* line 79, ../sass/screen.scss */
   .player-stats h3 {
     margin-left: 80px;
     margin-bottom: 20px;
   }
-  /* line 82, ../sass/screen.scss */
+  /* line 83, ../sass/screen.scss */
   .player-stats #stat-bg {
     position: relative;
     background-color: #FCFCFC;
@@ -1313,93 +1450,108 @@ nav ul li img {
     margin: 0 auto;
     box-shadow: 1px 1px 15px 1px #222;
   }
-  /* line 89, ../sass/screen.scss */
+  /* line 90, ../sass/screen.scss */
   .player-stats #stat-container {
     padding-bottom: 20px;
   }
-  /* line 91, ../sass/screen.scss */
+  /* line 92, ../sass/screen.scss */
   .player-stats #stat-container .row {
     display: flex;
     align-items: center;
   }
-  /* line 95, ../sass/screen.scss */
+  /* line 96, ../sass/screen.scss */
   .player-stats #stat-container .columns {
     border-bottom: none;
   }
 
-  /* line 104, ../sass/screen.scss */
+  /* line 105, ../sass/screen.scss */
   .filter .filters .accordion .tab label {
     width: 70%;
   }
-  /* line 107, ../sass/screen.scss */
+  /* line 108, ../sass/screen.scss */
   .filter .filters .accordion .tab .tab-content {
     width: 72.1%;
   }
-  /* line 112, ../sass/screen.scss */
+  /* line 113, ../sass/screen.scss */
   .filter .filters .accordion .tab-opp label {
     width: 70%;
   }
-  /* line 115, ../sass/screen.scss */
+  /* line 116, ../sass/screen.scss */
   .filter .filters .accordion .tab-opp .tab-content-opp {
     width: 72.1%;
   }
-  /* line 117, ../sass/screen.scss */
+  /* line 118, ../sass/screen.scss */
   .filter .filters .accordion .tab-opp .tab-content-opp label {
     width: 100%;
   }
 
-  /* line 125, ../sass/screen.scss */
+  /* line 126, ../sass/screen.scss */
   .index-container {
     margin-bottom: 0;
   }
-  /* line 127, ../sass/screen.scss */
+  /* line 128, ../sass/screen.scss */
   .index-container h1 {
     font-size: 5rem;
   }
 
-  /* line 131, ../sass/screen.scss */
+  /* line 132, ../sass/screen.scss */
   .compare-tool {
     flex-direction: row;
     height: 100%;
     top: 0;
   }
-  /* line 135, ../sass/screen.scss */
+  /* line 136, ../sass/screen.scss */
   .compare-tool .compare-player {
     flex: grow;
     margin: 0 14px;
     max-width: 250px;
   }
-  /* line 139, ../sass/screen.scss */
+  /* line 140, ../sass/screen.scss */
   .compare-tool .compare-player:last-child {
     margin-bottom: 0;
   }
 
-  /* line 144, ../sass/screen.scss */
+  /* line 145, ../sass/screen.scss */
   .compare-filters {
     flex-direction: row;
     height: 52px;
     top: 0;
   }
 
-  /* line 150, ../sass/screen.scss */
+  /* line 151, ../sass/screen.scss */
   .select-container .player-select {
     width: 48%;
   }
 
-  /* line 154, ../sass/screen.scss */
+  /* line 155, ../sass/screen.scss */
   .chart-size-controls {
     display: flex;
   }
+
+  /* line 161, ../sass/screen.scss */
+  .games-list .player-games .games-container .game-list-item {
+    flex-basis: 11.5%;
+  }
+
+  /* line 168, ../sass/screen.scss */
+  .browse-all-container .browse-all-item {
+    flex-basis: 31%;
+  }
 }
 @media (min-width: 900px) {
-  /* line 165, ../sass/screen.scss */
+  /* line 180, ../sass/screen.scss */
   .filter .filters .accordion .tab .tab-content .game {
     width: 25%;
   }
 }
 @media (min-width: 1100px) {
-  /* line 177, ../sass/screen.scss */
+  /* line 192, ../sass/screen.scss */
   .select-container .player-select {
     width: 23%;
+  }
+
+  /* line 197, ../sass/screen.scss */
+  .browse-all-container .browse-all-item {
+    flex-basis: 18%;
   }
 }

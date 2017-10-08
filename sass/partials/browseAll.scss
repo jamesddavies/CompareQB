@@ -1,0 +1,27 @@
+$fontstack: "Noto Sans", sans-serif;
+
+.browse-all-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 74px;
+    .browse-all-item {
+        flex-basis: 48%;
+        margin: 1%;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-family: $fontstack;
+        font-size: 12px;
+        text-decoration: none;
+        text-align: center;
+        padding: 10px;
+        box-sizing: border-box;
+        line-height: 1.4;
+        img {
+            width: 40%;
+            max-height: 120px;
+        }
+    }
+}
