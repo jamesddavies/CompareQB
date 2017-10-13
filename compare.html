@@ -116,7 +116,7 @@ $("#downloadLink").click(function(){
 	destCanvas.width = canvas.width;
 	destCanvas.height = canvas.height;
 	var ctx = destCanvas.getContext('2d');
-	ctx.fillStyle = 'white';
+	ctx.fillStyle = '#efefef';
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
 	ctx.drawImage(canvas,0,0);
 	var img = destCanvas.toDataURL('image/png', 2.0);

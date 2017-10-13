@@ -308,7 +308,7 @@ playerApp.controller("Compare", function(
       if (n == "3") $scope.players.player3 = player.data;
       if (n == "4") $scope.players.player4 = player.data;
 
-      console.log($scope.players);
+      //console.log($scope.players);
       $scope.calculateTotalYears();
 
       if (startYear){
@@ -323,7 +323,7 @@ playerApp.controller("Compare", function(
         });
       }
 
-      console.log($scope.playerYears);
+      //console.log($scope.playerYears);
 
       $timeout(function() {
         if ($scope.compareYearCareer == "career"){
@@ -491,12 +491,14 @@ playerApp.controller("Compare", function(
   $scope.createLink = function(){
     var link = "";
     angular.forEach($scope.players, function(player,index){
-      link += player.info.firstname + "+" + player.info.surname;
-      if ($scope.compareYearCareer == "year"){
-        var yr = $scope.playerYears[player.info.surname];
-        link += "-" + yr;
+      if (player.hasOwnProperty("stats")){
+        link += player.info.firstname + "+" + player.info.surname;
+        if ($scope.compareYearCareer == "year"){
+          var yr = $scope.playerYears[player.info.surname];
+          link += "-" + yr;
+        }
+        link += "/";
       }
-      link += "/";
     });
     $scope.shareLink = "http://compareqb.com/compare/" + link;
   }
@@ -625,6 +627,9 @@ playerApp.service("charts", function() {
 
     //Create year array + data for each player
 
+    var borderColor;
+    var prevBorderColor;
+
     angular.forEach(players, function(player,index){
       if (player.hasOwnProperty("stats")){
 
@@ -656,13 +661,23 @@ playerApp.service("charts", function() {
             }
           }
         });
+
+        borderColor = player.info.colors.colorMain;
+
+        if (prevBorderColor){
+          if (prevBorderColor == borderColor){
+            borderColor = player.info.colors.colorSecondary;
+          }
+        }
         
         dataCollection.push({
           label: player.info.surname,
           data: gameStatArr,
           backgroundColor: "rgba(255,255,255,0)",
-          borderColor: player.info.colors.colorMain
+          borderColor: borderColor
         });
+
+        prevBorderColor = borderColor;
       }
     });
 
