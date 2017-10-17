@@ -62,7 +62,7 @@
 </div>
 
 <div class="year-compare-controls" ng-if="compareYearCareer == 'year'">
-	<select ng-repeat="player in players" ng-if="player.stats " ng-model="playerYears[player.info.surname]" ng-change="changePlayerYear()">
+	<select ng-repeat="player in players" ng-if="player.stats " ng-model="playerYears[player.info.surname + ($index + 1)]" ng-change="changePlayerYear()">
 		<option value="">{{player.info.surname}}</option>
 		<option ng-repeat="year in player.stats.allYears" ng-value="{{year}}" ng-selected="$index == 0">{{year}}</option>
 	</select>
@@ -78,9 +78,9 @@
 
 <div class="games-list" ng-if="compareYearCareer == 'year' && totalYears.length > 0" ng-repeat="player in players">
 	<div class="player-games" ng-if="player.hasOwnProperty('stats')">
-		<p>{{player.info.surname}} Games in {{playerYears[player.info.surname]}}</p>
+		<p>{{player.info.surname}} Games in {{playerYears[player.info.surname + ($index + 1)]}}</p>
 		<div class="games-container">
-			<div class="game-list-item" style="background-color: {{player.info.colors.colorMain}}; color: {{player.info.colors.textColor}};" ng-repeat="game in playerYears[player.info.surname + 'games']">Game {{game.week}}<br><strong>{{game.opp}}</strong></div>
+			<div class="game-list-item" style="background-color: {{player.info.colors.colorMain}}; color: {{player.info.colors.textColor}};" ng-repeat="game in playerYears[player.info.surname + ($index + 1) + 'games']">Game {{game.week}}<br><strong>{{game.opp}}</strong></div>
 		</div>	
 	</div>
 </div>

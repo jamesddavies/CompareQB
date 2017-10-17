@@ -311,14 +311,14 @@ playerApp.controller("Compare", function(
       //console.log($scope.players);
       $scope.calculateTotalYears();
 
-      if (startYear){
-        $scope.playerYears[player.data.info.surname] = parseInt(startYear);
-        $scope.playerYears[player.data.info.surname + "games"] = player.data.stats.games.filter(function(e,i){
+      if (startYear){ //If URL contains year param
+        $scope.playerYears[player.data.info.surname + n] = parseInt(startYear);
+        $scope.playerYears[player.data.info.surname + n + "games"] = player.data.stats.games.filter(function(e,i){
           return e.year == startYear;
         });
       } else {
-        $scope.playerYears[player.data.info.surname] = player.data.stats.allYears[0];
-        $scope.playerYears[player.data.info.surname + "games"] = player.data.stats.games.filter(function(e,i){
+        $scope.playerYears[player.data.info.surname + n] = player.data.stats.allYears[0];
+        $scope.playerYears[player.data.info.surname + n + "games"] = player.data.stats.games.filter(function(e,i){
           return e.year == player.data.stats.allYears[0];
         });
       }
@@ -358,7 +358,7 @@ playerApp.controller("Compare", function(
   //Parse URL params
   for (param in $routeParams){
     if ($routeParams.hasOwnProperty(param)){
-      if ($routeParams[param].includes("-")){
+      if ($routeParams[param].indexOf("-") > -1){
         var paramSplit = $routeParams[param].split("-");
         $scope.players[param]['name'] = paramSplit[0];
         $scope.compareYearCareer = "year";
@@ -382,6 +382,9 @@ playerApp.controller("Compare", function(
       }
     };
 
+    delete $scope.playerYears[$scope.players["player" + n].info.surname + n];
+    delete $scope.playerYears[$scope.players["player" + n].info.surname + n + "games"];
+
     if (n == "1") $scope.players.player1 = newObj;
     if (n == "2") $scope.players.player2 = newObj;
     if (n == "3") $scope.players.player3 = newObj;
@@ -389,7 +392,7 @@ playerApp.controller("Compare", function(
 
     $scope.calculateTotalYears();
 
-    $scope.playerYears[n] = "";
+    console.log($scope.playerYears);
 
     if ($scope.compareYearCareer == "career"){
       charts.updateCareerCompareChart(
@@ -430,7 +433,7 @@ playerApp.controller("Compare", function(
     angular.forEach($scope.players, function(player, index) {
       if (player.hasOwnProperty("stats")) {
         player.stats.allYears.forEach(function(year) {
-          if (!array.includes(year)) {
+          if (array.indexOf(year) == -1) {
             array.push(year);
           }
         });
@@ -465,8 +468,8 @@ playerApp.controller("Compare", function(
       }
       angular.forEach($scope.players, function(player,index){
         if (player.hasOwnProperty("stats")){
-          $scope.playerYears[player.info.surname + "games"] = player.stats.games.filter(function(e,i){
-            return e.year == $scope.playerYears[player.info.surname];
+          $scope.playerYears[player.info.surname + index.substr(-1) + "games"] = player.stats.games.filter(function(e,i){
+            return e.year == $scope.playerYears[player.info.surname + index.substr(-1)];
           });
         }
       });
@@ -476,11 +479,12 @@ playerApp.controller("Compare", function(
   $scope.changePlayerYear = function(){
     angular.forEach($scope.players, function(player,index){
       if (player.hasOwnProperty("stats")){
-        $scope.playerYears[player.info.surname + "games"] = player.stats.games.filter(function(e,i){
-          return e.year == $scope.playerYears[player.info.surname];
+        $scope.playerYears[player.info.surname + index.substr(-1) + "games"] = player.stats.games.filter(function(e,i){
+          return e.year == $scope.playerYears[player.info.surname + index.substr(-1)];
         });
       }
     });
+    //console.log($scope.playerYears)
     charts.updateYearCompareChart(
       $scope.players,
       $scope.chartStat,
@@ -494,7 +498,7 @@ playerApp.controller("Compare", function(
       if (player.hasOwnProperty("stats")){
         link += player.info.firstname + "+" + player.info.surname;
         if ($scope.compareYearCareer == "year"){
-          var yr = $scope.playerYears[player.info.surname];
+          var yr = $scope.playerYears[player.info.surname + (index + 1)];
           link += "-" + yr;
         }
         link += "/";
@@ -633,7 +637,7 @@ playerApp.service("charts", function() {
     angular.forEach(players, function(player,index){
       if (player.hasOwnProperty("stats")){
 
-        var gameArr = playerYears[player.info.surname + "games"];
+        var gameArr = playerYears[player.info.surname + index.substr(-1) + "games"];
 
         var tempArr = [];   
 
